@@ -1,3 +1,4 @@
+﻿<<<<<<< HEAD
 ﻿<!DOCTYPE html>
 <html lang="en">
 
@@ -497,3 +498,516 @@
 
 </html>
 
+=======
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Robot Knowledge Inventory</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.png" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-settings d-none d-lg-flex">
+            <a class="nav-link" href="#">
+              <i class="icon-ellipsis"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="setting-content">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+            <div class="add-items d-flex px-3 mb-0">
+              <form class="form w-100">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                </div>
+              </form>
+            </div>
+            <div class="list-wrapper px-3">
+              <ul class="d-flex flex-column-reverse todo-list">
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Team review meeting at 3.00 PM
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Prepare for presentation
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Resolve all the low priority tickets due today
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Schedule meeting for next week
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Project review
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+              </ul>
+            </div>
+            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 11 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+              <p class="text-gray mb-0">The total number of sessions</p>
+            </div>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 7 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
+              <p class="text-gray mb-0 ">Call Sarah Graves</p>
+            </div>
+          </div>
+          <!-- To do section tab ends -->
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Dashboard</span>
+                  </a>
+              </li>
+              <!-- SAMPLE NAVIGATION BAR
+    <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">UI Elements</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+              </ul>
+          </div>
+      </li>
+      -->
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Robots</span>
+                      <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="ui-basic">
+                      <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="">Aerial Robots</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="robots-aquatic.html">Aquatic Robots</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="robots-ground.html">Ground Robots</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="">Manipulators</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="">Exoskeletons</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                      <i class="icon-columns menu-icon"></i>
+                      <span class="menu-title">Software</span>
+                      <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="form-elements">
+                      <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"><a class="nav-link" href="">Intelligent Systems</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">Navigation</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">Perception</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">Teleoperation</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                      <i class="icon-bar-graph menu-icon"></i>
+                      <span class="menu-title">Digital Assets</span>
+                      <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="charts">
+                      <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="">Simulations</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="">3D Models</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                      <i class="icon-contract menu-icon"></i>
+                      <span class="menu-title">Datasets</span>
+                      <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="icons">
+                      <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="">CW Radar</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="">LiDAR</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                      <i class="icon-grid-2 menu-icon"></i>
+                      <span class="menu-title">Documents</span>
+                      <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="tables">
+                      <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="">Publications</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                    <i class="icon-grid-2 menu-icon"></i>
+                    <span class="menu-title">Tutorials</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="tables">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="">ROS Basics</a></li>
+                    </ul>
+                </div>
+            </li>
+          </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+          <div class="content-wrapper">
+              <div class="row">
+                  <div class="col-md-12 grid-margin">
+                      <div class="row">
+                          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                              <h2 class="font-weight-bold">Welcome to the Robot Knowledge Inventory</h2>
+                          </div>
+                          <div class="col-12 col-xl-4">
+                              <div class="justify-content-end d-flex">
+                                  <h6 class="font=weight-normal"><p>Today is &nbsp;</p></h6>
+                                      <p id="date"></p>
+                                      <script>
+                                          var today = new Date();
+                                          var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                          var monthName = months[today.getMonth()];
+                                          var date = today.getFullYear() + '-' + monthName + '-' + today.getDate();
+                                          document.getElementById("date").innerHTML = date;
+                                      </script>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6 grid-margin stretch-card">
+                      <div class="card bg-transparent">
+                          <div class="card-people">
+                              <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-1" data-ride="carousel">
+                                  <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                          <div class="row">
+                                              <div class="d-flex flex-column justify-content-start">
+                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-1.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
+                                                      <div class="card-body m-1 mb-6">
+                                                          <a href="robots-aquatic.html" style="text-decoration:none;">
+                                                              <p class="card-title" style="color:white">Aquatic Robot</p>
+                                                              <h1 class="text" style="color:white">AVEXIS</h1>
+                                                              <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">The University of Manchester, UK</h3>
+                                                              <p class="mb-2 mb-xl-2" style="color:lightgray">The Aqua Vehicle for Exploration and In-Situ Sensing (AVEXIS) is a small underwater vehicle that been designed to survey and monitor hazardous environments, ensuring a more efficient decommissioning process and protecting human workers from harm.</p>
+                                                          </a>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                          <div class="row">
+                                              <div class="d-flex flex-column justify-content-start">
+                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-2.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
+                                                      <div class="card-body m-1 mb-6">
+                                                          <p class="card-title" style="color:white">Digital Asset</p>
+                                                          <h1 class="text" style="color:white">PointCloud Streaming</h1>
+                                                          <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">RAIN Hub, UK</h3>
+                                                          <p class="mb-2 mb-xl-2" style="color:lightgray">This Unity asset allows the streaming, rendering and VR visualisation of PointCloud2 data using ROS and Unity3D. It can also replay and visualise elements from past robot LIDAR missions such as robot path history and significant events.</p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                          <div class="row">
+                                              <div class="d-flex flex-column justify-content-start">
+                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-3.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
+                                                      <div class="card-body m-1 mb-6">
+                                                          <p class="card-title" style="color:white">Research Group</p>
+                                                          <h1 class="text" style="color:white">Smart Systems Group</h1>
+                                                          <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">Heriot-Watt University, UK</h3>
+                                                          <p class="mb-2 mb-xl-2" style="color:lightgray">Influencing future product development, business models, resilience of critical infrastructure and exploration within extreme environments.</p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                          <div class="row">
+                                              <div class="d-flex flex-column justify-content-start">
+                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-4.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
+                                                      <div class="card-body m-1 mb-6">
+                                                          <p class="card-title" style="color:white">Simulation Environment</p>
+                                                          <h1 class="text" style="color:white">Nuclear Facility</h1>
+                                                          <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">The University of Manchester, UK</h3>
+                                                          <p class="mb-2 mb-xl-2" style="color:lightgray">This robot simulator allows the operation of digital robotic twins on certain environments in nuclear decomissioning. Developed using Unity3D and ROS, it can simulate land, water, and air dynamics as well as effects of radiation on sensor health.</p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next" href="#detailedReports" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6 grid-margin transparent">
+                      <div class="row">
+                          <div class="col-md-6 mb-4 stretch-card transparent">
+                              <div class="card card-tale">
+                                  <div class="card-body">
+                                      <p class="mb-4">Robots</p>
+                                      <p class="fs-30 mb-2">32</p>
+                                      <p>from 8 institutions</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 mb-4 stretch-card transparent">
+                              <div class="card card-dark-blue">
+                                  <div class="card-body">
+                                      <p class="mb-4">Software</p>
+                                      <p class="fs-30 mb-2">5</p>
+                                      <p>including platform-agnostic packages</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                              <div class="card card-light-blue">
+                                  <div class="card-body">
+                                      <p class="mb-4">Digital Assets</p>
+                                      <p class="fs-30 mb-2">150</p>
+                                      <p>for whole world, sandbox, and indoor simulations</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 stretch-card transparent">
+                              <div class="card card-light-danger">
+                                  <div class="card-body">
+                                      <p class="mb-4">Datasets and Documents</p>
+                                      <p class="fs-30 mb-2">17</p>
+                                      <p>publications, tutorials, and white papers</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6 grid-margin stretch-card">
+                      <div class="card">
+                          <div class="card-body">
+                              <p class="card-title">How to Use this Inventory</p>
+                              <p class="font-weight-500">
+                                  Here, you will find various resources for robotics such as <span class="text-primary">tutorials, digital assets, software, simulations, and more</span>
+                                 ! Use the side bar on your left to view individual entries or type in keywords on the search bar. <p>Please read and agree to the following terms and conditions:</p>
+                                  <div class="template-demo">
+                                      <button type="button" class="btn btn-danger btn-icon-text">
+                                          <i class="ti-alert btn-icon-prepend"></i>
+                                          End-User Licensing
+                                      </button>
+                                      <button type="button" class="btn btn-warning btn-icon-text">
+                                          <i class="ti-file btn-icon-prepend"></i>
+                                          Privacy and Data Protection
+                                      </button>
+                                  </div>
+</div>       
+                      </div>
+                  </div>
+                  <div class="col-md-6 grid-margin stretch-card">
+                      <div class="card">
+                          <div class="card-body">
+                              <div class="d-flex justify-content-between">
+                                  <p class="card-title">Submitting to the Database</p>
+                              </div>
+                              <p class="font-weight-500">
+                                  We're looking to grow this inventory! If you want to submit your work to our database, click on the <span class="text-primary">submit</span> button below and follow the instructions.
+                                  Also, feel free to contact us for any feedback or suggestion!
+                              </p>
+                              <br />
+                              <button type="button" class="btn btn-info btn-lg btn-block"><i class="ti-upload btn-icon-prepend"></i> 
+                              Submit to the Database </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 row-md-0 grid-margin stretch-card">
+                      <div class="card">
+                          <div class="card-body">
+                              <p class="card-title">Contributors</p>
+                              <p style="text-align:center;"><img src="images/dashboard/developers.png" alt="welcome"></p>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                  <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. UoM-HW Collaboration. All rights reserved.</span>
+              </div>
+          </footer> 
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>   
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="js/dataTables.select.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <script src="js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+
+>>>>>>> 36460cf91df790dddc10e9278b5caef86b92db5c

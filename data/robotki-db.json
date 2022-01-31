@@ -1,0 +1,29 @@
+[
+    {
+    "_id": {
+      "$oid": "101"
+    },
+    "robot_shortname": "Mallard",
+    "category": "aquatic",
+    "institution": "The University of Manchester",
+    "description": "Small robotic aquatic duck"
+    },
+    {
+    "_id": {
+        "$oid": "102"
+    },
+    "robot_shortname": "Husky UGV",
+    "category": "ground",
+    "institution": "Clearpath Robotics",
+    "description": "Unmanned ground vehicle"
+    }, 
+    {
+    "_id": {
+        "$oid": "103"
+    },
+    "robot_shortname": "Tello",
+    "category": "aerial",
+    "institution": "DJI",
+    "description": "Unmanned aerial vehicle"
+    }
+]

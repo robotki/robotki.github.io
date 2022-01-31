@@ -20,6 +20,10 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
+
+  <!-- Add JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquary/3.1.0/jquery.min.js"></script>
+
 </head>
 <body>
   <div class="container-scroller">
@@ -39,20 +43,20 @@
           <li class="nav-item nav-search d-none d-lg-block">
             <div class="input-group">
               <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
+                <span class="input-group-text" id="bar-search">
                   <i class="icon-search"></i>
                 </span>
               </div>
-              <form action="search-results.html">
-                <input 
+              <input 
                     type="text" 
-                    class="form-control" 
-                    id="navbar-search-input" 
+                    class="form-control"
+                    name="search" 
+                    id="search" 
                     placeholder="Search Robotki" 
                     aria-label="search" 
                     aria-describedby="search">
-              </form>
             </div>
+            <ul class="list-group" id="result"></ul>
           </li>
         </ul>
         <!-- SEARCH BAR ENDS -->>
@@ -250,6 +254,31 @@
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
-
 </html>
 
+
+<script>
+$(document).ready(function(){
+    $.ajaxSetup({ cache: false });
+    $('#search').keyup(function(){
+    $('#result').html('');
+    $('#state').val('');
+    var searchField = $('#search').val();
+    var expression = new RegExp(searchField, "i");
+    $.getJSON('robotki-db.json', function(data) {
+    $.each(data, function(key, value){
+    if (value.name.search(expression) != -1 || value.location.search(expression) != -1)
+    {
+        $('#result').append('<li class="list-group-item link-class"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.name+' | <span class="text-muted">'+value.location+'</span></li>');
+    }
+    });   
+    });
+    });
+    
+    $('#result').on('click', 'li', function() {
+    var click_text = $(this).text().split('|');
+    $('#search').val($.trim(click_text[0]));
+    $("#result").html('');
+    });
+});
+</script>

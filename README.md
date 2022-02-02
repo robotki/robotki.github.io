@@ -15,22 +15,22 @@ Alternatively, you can also email us at (mailto: robotknowledgeinventory@gmail.c
 
 # Contents: 
 
-Robots
+Robots:
 Aerial Robots, Aquatic Robots, Ground Robots, Manipulators, Robot Models, Robot Software
 
-Software
+Software:
 Platform Agnostic Software, Artificial Intelligence, Navigation, Perception, Teleoperation
 
-Digital Assets
+Digital Assets:
 Simulations, Simulation Environments, 3D Models
 
-Datasets
+Datasets:
 LiDAR Data, Continuous-Wave Radar Data, and more coming soon!
 
-Tutorials
+Tutorials:
 ROS Basic and Advanced Tutorials
 
-Documents
+Documents:
 Publications, White Papers, Featured Articles
 
 # Contributors: 

@@ -1,658 +1,298 @@
-﻿ <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Robot Knowledge Inventory</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <meta name="description" content="The Robot Knowledge Inventory is an free online repository of anything about robotics. Here, you will find various resources such as tutorials, digital assets, software, simulations, and more!">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Product-List.css">
 </head>
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.png" alt="logo"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
-              </div>
-              <form action="search-results.html">
-                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search Robotki" aria-label="search" aria-describedby="search">
-              </form>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: var(--bs-blue);background: var(--bs-gray-900);">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-robot"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Robotki</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="margin-right: 5px;">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21 8.77217L14.0208 1.79299C12.8492 0.621414 10.9497 0.621413 9.77817 1.79299L3 8.57116V23.0858H10V17.0858C10 15.9812 10.8954 15.0858 12 15.0858C13.1046 15.0858 14 15.9812 14 17.0858V23.0858H21V8.77217ZM11.1924 3.2072L5 9.39959V21.0858H8V17.0858C8 14.8767 9.79086 13.0858 12 13.0858C14.2091 13.0858 16 14.8767 16 17.0858V21.0858H19V9.6006L12.6066 3.2072C12.2161 2.81668 11.5829 2.81668 11.1924 3.2072Z" fill="currentColor"></path>
+                            </svg><span style="margin-left: 0;">Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="robots.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="margin-right: 5px;">
+                                <path d="M14.1254 13H10.1254V15H14.1254V13Z" fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.12537 13C9.22994 13 10.1254 12.1046 10.1254 11C10.1254 9.89543 9.22994 9 8.12537 9C7.0208 9 6.12537 9.89543 6.12537 11C6.12537 12.1046 7.0208 13 8.12537 13ZM8.12537 11.5C8.40151 11.5 8.62537 11.2761 8.62537 11C8.62537 10.7239 8.40151 10.5 8.12537 10.5C7.84922 10.5 7.62537 10.7239 7.62537 11C7.62537 11.2761 7.84922 11.5 8.12537 11.5Z" fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1254 11C18.1254 12.1046 17.2299 13 16.1254 13C15.0208 13 14.1254 12.1046 14.1254 11C14.1254 9.89543 15.0208 9 16.1254 9C17.2299 9 18.1254 9.89543 18.1254 11ZM16.6254 11C16.6254 11.2761 16.4015 11.5 16.1254 11.5C15.8492 11.5 15.6254 11.2761 15.6254 11C15.6254 10.7239 15.8492 10.5 16.1254 10.5C16.4015 10.5 16.6254 10.7239 16.6254 11Z" fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.74884 14.6663C3.73056 16.6421 5.76939 18 8.12537 18H16.1254C18.5654 18 20.6652 16.5435 21.6029 14.4525C22.3722 13.9093 22.8746 13.0133 22.8746 12C22.8746 10.9867 22.3722 10.0907 21.6029 9.54753C20.6652 7.45651 18.5654 6 16.1254 6H8.12537C5.76939 6 3.73056 7.3579 2.74884 9.33375C1.78448 9.83263 1.12537 10.8393 1.12537 12C1.12537 13.1607 1.78448 14.1674 2.74884 14.6663ZM8.12537 8H16.1254C17.5088 8 18.7282 8.70234 19.4465 9.76991C19.7227 10.4593 19.8746 11.2119 19.8746 12C19.8746 12.7881 19.7227 13.5407 19.4465 14.2301C18.7282 15.2977 17.5088 16 16.1254 16H8.12537C5.91623 16 4.12537 14.2091 4.12537 12C4.12537 9.79086 5.91623 8 8.12537 8Z" fill="currentColor"></path>
+                            </svg><span style="margin-left: 0;">Robots</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="software.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="margin-right: 5px;">
+                                <path d="M13.325 3.05011L8.66741 20.4323L10.5993 20.9499L15.2568 3.56775L13.325 3.05011Z" fill="currentColor"></path>
+                                <path d="M7.61197 18.3608L8.97136 16.9124L8.97086 16.8933L3.87657 12.1121L8.66699 7.00798L7.20868 5.63928L1.04956 12.2017L7.61197 18.3608Z" fill="currentColor"></path>
+                                <path d="M16.388 18.3608L15.0286 16.9124L15.0291 16.8933L20.1234 12.1121L15.333 7.00798L16.7913 5.63928L22.9504 12.2017L16.388 18.3608Z" fill="currentColor"></path>
+                            </svg><span style="margin-left: 0;">Software</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-seam" style="margin-right: 5px;">
+                                <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+                            </svg><span style="margin-left: 0;">Digital Assets</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-clipboard-data" style="margin-right: 5px;">
+                                <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"></path>
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+                            </svg><span style="margin-left: 0;">Datasets</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-award" style="margin-right: 5px;">
+                                <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"></path>
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"></path>
+                            </svg><span style="margin-left: 0;">Tutorials</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-zip" style="margin-right: 5px;">
+                                <path d="M6.5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.109 0l-.93-.62a1 1 0 0 1-.415-1.074l.4-1.599V7.5zm2 0h-1v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.93-.62-.4-1.598a1 1 0 0 1-.03-.243V7.5z"></path>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm5.5-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9v1H8v1h1v1H8v1h1v1H7.5V5h-1V4h1V3h-1V2h1V1z"></path>
+                            </svg><span style="margin-left: 0;">Documents</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item nav-settings d-none d-lg-flex">
-            <a class="nav-link" href="#">
-              <i class="icon-ellipsis"></i>
-            </a>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial -->
-        <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                    <i class="icon-grid menu-icon"></i>
-                    <span class="menu-title">Dashboard</span>
-                    </a>
-                </li>
-        <!-- SAMPLE NAVIGATION BAR
-        <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                  <i class="icon-layout menu-icon"></i>
-                  <span class="menu-title">UI Elements</span>
-                  <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                  <ul class="nav flex-column sub-menu">
-                      <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                  </ul>
-              </div>
-          </li>
-          -->
-              <li class="nav-item">
-                  <a class="nav-link" data-toggle="collapse" href="#nav-robots" aria-expanded="false" aria-controls="nav-robots">
-                      <i class="icon-grid-2 menu-icon"></i>
-                      <span class="menu-title">Robots</span>
-                      <i class="menu-arrow"></i>
-                  </a>
-                  <div class="collapse" id="nav-robots">
-                      <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"> <a class="nav-link" href="robots-aerial.html">Aerial Robots</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="robots-aquatic.html">Aquatic Robots</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="robots-ground.html">Ground Robots</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="robots-manipulators.html">Manipulators</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" data-toggle="collapse" href="#nav-software" aria-expanded="false" aria-controls="nav-software">
-                      <i class="icon-ellipsis menu-icon"></i>
-                      <span class="menu-title">Software</span>
-                      <i class="menu-arrow"></i>
-                  </a>
-                  <div class="collapse" id="nav-software">
-                      <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"><a class="nav-link" href="">Intelligent Systems</a></li>
-                          <li class="nav-item"><a class="nav-link" href="">Navigation</a></li>
-                          <li class="nav-item"><a class="nav-link" href="software-perception.html">Perception</a></li>
-                          <li class="nav-item"><a class="nav-link" href="">Teleoperation</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" data-toggle="collapse" href="#nav-digital-assets" aria-expanded="false" aria-controls="nav-digital-assets">
-                      <i class="icon-search menu-icon"></i>
-                      <span class="menu-title">Digital Assets</span>
-                      <i class="menu-arrow"></i>
-                  </a>
-                  <div class="collapse" id="nav-digital-assets">
-                      <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"> <a class="nav-link" href="">Simulations</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="">3D Models</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" data-toggle="collapse" href="#nav-datasets" aria-expanded="false" aria-controls="nav-datasets">
-                      <i class="icon-bar-graph menu-icon"></i>
-                      <span class="menu-title">Datasets</span>
-                      <i class="menu-arrow"></i>
-                  </a>
-                  <div class="collapse" id="nav-datasets">
-                      <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"> <a class="nav-link" href="datasets-cwradar.html">CW Radar</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="datasets-lidar.html">LiDAR</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" data-toggle="collapse" href="#nav-documents" aria-expanded="false" aria-controls="nav-documents">
-                      <i class="icon-contract menu-icon"></i>
-                      <span class="menu-title">Documents</span>
-                      <i class="menu-arrow"></i>
-                  </a>
-                  <div class="collapse" id="nav-documents">
-                      <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"> <a class="nav-link" href="">Publications</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" data-toggle="collapse" href="#nav-tutorials" aria-expanded="false" aria-controls="nav-tutorials">
-                      <i class="icon-menu menu-icon"></i>
-                      <span class="menu-title">Tutorials</span>
-                      <i class="menu-arrow"></i>
-                  </a>
-                  <div class="collapse" id="nav-tutorials">
-                      <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"> <a class="nav-link" href="tutorials-ros.html">ROS</a></li>
-                      </ul>
-                  </div>
-              </li>
-          </ul>
-      </nav>
-      <!-- partial -->
-      <div class="main-panel">
-          <div class="content-wrapper">
-              <div class="row">
-                  <div class="col-md-12 grid-margin">
-                      <div class="row">
-                          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                              <h2 class="font-weight-bold">Welcome to the Robot Knowledge Inventory</h2>
-                          </div>
-                          <div class="col-12 col-xl-4">
-                              <div class="justify-content-end d-flex">
-                                  <h6 class="font=weight-normal"><p>Today is &nbsp;</p></h6>
-                                  <p id="date"></p>
-                                  <script>
-                                      var today = new Date();
-                                      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                                      var monthName = months[today.getMonth()];
-                                      var date = today.getFullYear() + '-' + monthName + '-' + today.getDate();
-                                      document.getElementById("date").innerHTML = date;
-                                  </script>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 grid-margin stretch-card">
-                      <div class="card bg-transparent">
-                          <div class="card-people">
-                              <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-1" data-ride="carousel">
-                                  <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                          <div class="row">
-                                              <div class="d-flex flex-column justify-content-start">
-                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-1.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
-                                                      <div class="card-body m-1 mb-6">
-                                                          <a href="robots-aquatic.html" style="text-decoration:none;">
-                                                              <p class="card-title" style="color:white">Aquatic Robot</p>
-                                                              <h1 class="text" style="color:white">AVEXIS</h1>
-                                                              <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">The University of Manchester, UK</h3>
-                                                              <p class="mb-2 mb-xl-2" style="color:lightgray">The Aqua Vehicle for Exploration and In-Situ Sensing (AVEXIS) is a small underwater vehicle that been designed to survey and monitor hazardous environments, ensuring a more efficient decommissioning process and protecting human workers from harm.</p>
-                                                          </a>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="carousel-item">
-                                          <div class="row">
-                                              <div class="d-flex flex-column justify-content-start">
-                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-2.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
-                                                      <div class="card-body m-1 mb-6">
-                                                          <p class="card-title" style="color:white">Digital Asset</p>
-                                                          <h1 class="text" style="color:white">PointCloud Streaming</h1>
-                                                          <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">RAIN Hub, UK</h3>
-                                                          <p class="mb-2 mb-xl-2" style="color:lightgray">This Unity asset allows the streaming, rendering and VR visualisation of PointCloud2 data using ROS and Unity3D. It can also replay and visualise elements from past robot LIDAR missions such as robot path history and significant events.</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="carousel-item">
-                                          <div class="row">
-                                              <div class="d-flex flex-column justify-content-start">
-                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-3.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
-                                                      <div class="card-body m-1 mb-6">
-                                                          <p class="card-title" style="color:white">Research Group</p>
-                                                          <h1 class="text" style="color:white">Smart Systems Group</h1>
-                                                          <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">Heriot-Watt University, UK</h3>
-                                                          <p class="mb-2 mb-xl-2" style="color:lightgray">Influencing future product development, business models, resilience of critical infrastructure and exploration within extreme environments.</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="carousel-item">
-                                          <div class="row">
-                                              <div class="d-flex flex-column justify-content-start">
-                                                  <div class="card my-2 mx-4 p-4" , style="background-image: url(images/dashboard/welcome-4.PNG); background-repeat: no-repeat; background-size: 100% 100%;">
-                                                      <div class="card-body m-1 mb-6">
-                                                          <p class="card-title" style="color:white">Simulation Environment</p>
-                                                          <h1 class="text" style="color:white">Nuclear Facility</h1>
-                                                          <h3 class="font-weight-500 mb-xl-8 text" style="color:lightgray">The University of Manchester, UK</h3>
-                                                          <p class="mb-2 mb-xl-2" style="color:lightgray">This robot simulator allows the operation of digital robotic twins on certain environments in nuclear decomissioning. Developed using Unity3D and ROS, it can simulate land, water, and air dynamics as well as effects of radiation on sensor health.</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Previous</span>
-                                  </a>
-                                  <a class="carousel-control-next" href="#detailedReports" role="button" data-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Next</span>
-                                  </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-6 grid-margin transparent">
-                      <div class="row">
-                          <div class="col-md-6 mb-4 stretch-card transparent">
-                              <div class="card card-tale">
-                                  <div class="card-body">
-                                      <p class="mb-4">Robots</p>
-                                      <p class="fs-30 mb-2">17</p>
-                                      <p>from 3 institutions</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6 mb-4 stretch-card transparent">
-                              <div class="card card-dark-blue">
-                                  <div class="card-body">
-                                      <p class="mb-4">Software</p>
-                                      <p class="fs-30 mb-2">3</p>
-                                      <p>including platform-agnostic packages</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                              <div class="card card-light-blue">
-                                  <div class="card-body">
-                                      <p class="mb-4">Digital Assets</p>
-                                      <p class="fs-30 mb-2">4</p>
-                                      <p>for whole world, sandbox, and indoor simulations</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6 stretch-card transparent">
-                              <div class="card card-light-danger">
-                                  <div class="card-body">
-                                      <p class="mb-4">Datasets and Documents</p>
-                                      <p class="fs-30 mb-2">5</p>
-                                      <p>publications, tutorials, and white papers</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 grid-margin stretch-card">
-                      <div class="card">
-                          <div class="card-body">
-                              <p class="card-title">How to Use this Inventory</p>
-                              <p class="font-weight-500">
-                                  Here, you will find various resources for robotics such as <span class="text-primary">tutorials, digital assets, software, simulations, and more</span>
-                                  ! Use the side bar on your left to view individual entries or type in keywords on the search bar.
-                              <p>Please read and agree to the following terms and conditions:</p>
-                              <div class="template-demo">
-                                  <button type="button" class="btn btn-danger btn-icon-text" data-toggle="modal" data-target="#exampleModalCenter">
-                                      <i class="ti-alert btn-icon-prepend"></i>
-                                      BSD 3-Clause Clear License
-                                  </button>
-                                  <!-- Modal -->
-                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                      <div class="modal-dialog modal-lg" role="document">
-                                          <div class="modal-content">
-                                              <div class="modal-header">
-                                                  <h2 class="modal-title" id="exampleModalCenter">The Clear BSD License</h2>
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                              </div>
-                                              <div class="modal-body">
-                                                  <img src="images/bsd3license.PNG" alt="Clear BSD-3 License" width="766" height="168">
-                                                  <p>&nbsp;</p>
-                                                  <p style="font-size:16px">RobotKI is released under the BSD 3-Clause Clear License.</p>
-                                                  <p style="font-size:16px">Copyright (c) [2022] [The University of Manchester and Heriot-Watt University] All rights reserved.</p>
-                                                  <p>&nbsp;</p>
-
-                                                  <p style="font-size:16px">
-                                                      Redistribution and use in source and binary forms, with or without
-                                                      modification, are permitted (subject to the limitations in the disclaimer
-                                                      below) provided that the following conditions are met:
-                                                  </p>
-
-                                                  <p style="font-size:16px">
-                                                      * Redistributions of source code must retain the above copyright notice,
-                                                      this list of conditions and the following disclaimer.
-                                                  </p>
-
-                                                  <p style="font-size:16px">
-                                                      * Redistributions in binary form must reproduce the above copyright
-                                                      notice, this list of conditions and the following disclaimer in the
-                                                      documentation and/or other materials provided with the distribution.
-                                                  </p>
-
-                                                  <p style="font-size:16px">
-                                                      * Neither the name of the copyright holder nor the names of its
-                                                      contributors may be used to endorse or promote products derived from this
-                                                      software without specific prior written permission.
-                                                  </p>
-
-                                                  <p style="font-size:16px">
-                                                      NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY
-                                                      THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-                                                      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-                                                      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-                                                      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
-                                                      CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-                                                      EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-                                                      PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-                                                      BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
-                                                      IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-                                                      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-                                                      POSSIBILITY OF SUCH DAMAGE.
-                                                  </p>
-                                              </div>
-                                              <div class="modal-footer">
-                                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <button type="button" class="btn btn-warning btn-icon-text" data-toggle="modal" data-target="#exampleModalLong">
-                                      <i class="ti-file btn-icon-prepend"></i>
-                                      Privacy and Data Protection
-                                  </button>
-                                  <!-- Modal -->
-                                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                      <div class="modal-dialog modal-lg" role="document">
-                                          <div class="modal-content">
-                                              <div class="modal-header">
-                                                  <h2 class="modal-title" id="exampleModalLongTitle">Privacy and Data Protection</h2>
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                              </div>
-                                              <div class="modal-body">
-                                                  <h3>Privacy Policy</h3>
-                                                  <p>Last updated: January 25, 2022</p>
-                                                  <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-                                                  <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.privacypolicies.com/blog/privacy-policy-template/" target="_blank">Privacy Policy Template</a>.</p>
-                                                  <h3>Interpretation and Definitions</h3>
-                                                  <h4>Interpretation</h4>
-                                                  <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-                                                  <h4>Definitions</h4>
-                                                  <p>For the purposes of this Privacy Policy:</p>
-                                                  <ul>
-                                                      <li>
-                                                          <p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Robot Knowledge Inventory.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Country</strong> refers to:  United Kingdom</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Service</strong> refers to the Website.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Website</strong> refers to Robot Knowledge Inventory, accessible from <a href="https://robotki.github.io/" rel="external nofollow noopener" target="_blank">https://robotki.github.io/</a></p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
-                                                      </li>
-                                                  </ul>
-                                                  <h3>Collecting and Using Your Personal Data</h3>
-                                                  <h4>Types of Data Collected</h4>
-                                                  <h5>Personal Data</h5>
-                                                  <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-                                                  <ul>
-                                                      <li>
-                                                          <p>Email address</p>
-                                                      </li>
-                                                      <li>
-                                                          <p>First name and last name</p>
-                                                      </li>
-                                                      <li>
-                                                          <p>Usage Data</p>
-                                                      </li>
-                                                  </ul>
-                                                  <h5>Usage Data</h5>
-                                                  <p>Usage Data is collected automatically when using the Service.</p>
-                                                  <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
-                                                  <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
-                                                  <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
-                                                  <h5>Tracking Technologies and Cookies</h5>
-                                                  <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-                                                  <ul>
-                                                      <li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
-                                                      <li><strong>Flash Cookies.</strong> Certain features of our Service may use local stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how You can delete Flash Cookies, please read &quot;Where can I change the settings for disabling, or deleting local shared objects?&quot; available at <a href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_" rel="external nofollow noopener" target="_blank">https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_</a></li>
-                                                      <li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
-                                                  </ul>
-                                                  <p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies: <a href="https://www.privacypolicies.com/blog/privacy-policy-template/#Use_Of_Cookies_Log_Files_And_Tracking" target="_blank">Cookies by PrivacyPolicies Generator</a>.</p>
-                                                  <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
-                                                  <ul>
-                                                      <li>
-                                                          <p><strong>Necessary / Essential Cookies</strong></p>
-                                                          <p>Type: Session Cookies</p>
-                                                          <p>Administered by: Us</p>
-                                                          <p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Cookies Policy / Notice Acceptance Cookies</strong></p>
-                                                          <p>Type: Persistent Cookies</p>
-                                                          <p>Administered by: Us</p>
-                                                          <p>Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>Functionality Cookies</strong></p>
-                                                          <p>Type: Persistent Cookies</p>
-                                                          <p>Administered by: Us</p>
-                                                          <p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
-                                                      </li>
-                                                  </ul>
-                                                  <p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
-                                                  <h4>Use of Your Personal Data</h4>
-                                                  <p>The Company may use Personal Data for the following purposes:</p>
-                                                  <ul>
-                                                      <li>
-                                                          <p><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</p>
-                                                      </li>
-                                                      <li>
-                                                          <p><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
-                                                      </li>
-                                                  </ul>
-                                                  <p>We may share Your personal information in the following situations:</p>
-                                                  <ul>
-                                                      <li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service,  to contact You.</li>
-                                                      <li><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
-                                                      <li><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</li>
-                                                      <li><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
-                                                      <li><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
-                                                      <li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
-                                                  </ul>
-                                                  <h4>Retention of Your Personal Data</h4>
-                                                  <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
-                                                  <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
-                                                  <h4>Transfer of Your Personal Data</h4>
-                                                  <p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
-                                                  <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
-                                                  <p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
-                                                  <h4>Disclosure of Your Personal Data</h4>
-                                                  <h5>Business Transactions</h5>
-                                                  <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
-                                                  <h5>Law enforcement</h5>
-                                                  <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
-                                                  <h5>Other legal requirements</h5>
-                                                  <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
-                                                  <ul>
-                                                      <li>Comply with a legal obligation</li>
-                                                      <li>Protect and defend the rights or property of the Company</li>
-                                                      <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-                                                      <li>Protect the personal safety of Users of the Service or the public</li>
-                                                      <li>Protect against legal liability</li>
-                                                  </ul>
-                                                  <h4>Security of Your Personal Data</h4>
-                                                  <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-                                                  <h3>Children's Privacy</h3>
-                                                  <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-                                                  <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
-                                                  <h3>Links to Other Websites</h3>
-                                                  <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
-                                                  <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-                                                  <h3>Changes to this Privacy Policy</h3>
-                                                  <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
-                                                  <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
-                                                  <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-                                                  <h3>Contact Us</h3>
-                                                  <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-                                                  <ul>
-                                                      <li>By email: robotknowledgeinventory@gmail.com</li>
-                                                  </ul>
-
-                                              </div>
-                                              <div class="modal-footer">
-                                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-6 grid-margin stretch-card">
-                      <div class="card">
-                          <div class="card-body">
-                              <div class="d-flex justify-content-between">
-                                  <p class="card-title">Submitting to the Database</p>
-                              </div>
-                              <p class="font-weight-500">
-                                  We're looking to grow this inventory! If you want to submit your work to our database, click on the submit button below and follow the instructions (Note: requires a Google account).
-                                  Alternatively, you can also <a href="mailto:robotknowledgeinventory@gmail.com"> email us </a> and we will send you a template.
-                              </p>
-                              <br />
-                              <button type="button" class="btn btn-info btn-lg btn-block">
-                                  <i class="ti-upload btn-icon-prepend"></i>
-                                  <a href="https://forms.gle/kex1H183NQwbb4kCA" style="text-decoration:none; color:white"> Submit to the Database </a>
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-12 row-md-0 grid-margin stretch-card">
-                      <div class="card">
-                          <div class="card-body">
-                              <p class="card-title">Contributors</p>
-                              <p style="text-align:center;"><img src="images/dashboard/developers.png" alt="welcome"></p>
-                          </div>
-                      </div>
-
-                  </div>
-              </div>
-          </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-              <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                  <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. UoM-HW Collaboration. All rights reserved.</span>
-              </div>
-          </footer> 
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>   
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-
-  <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="js/dataTables.select.min.js"></script>
-
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search Robotki"><button class="btn btn-primary py-0" type="button" style="background: var(--bs-gray-900);"><i class="fas fa-search"></i></button></div>
+                        </form>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Welcome to the <strong>Robot Knowledge Inventory</strong></h3>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="card"><img class="card-img w-100 d-block" src="assets/img/feature/feature-1.png">
+                                            <div class="card-img-overlay">
+                                                <h4 class="text-start text-light">Aquatic Robot</h4>
+                                                <h1 class="text-start text-light">AVEXIS™</h1>
+                                                <h5 class="text-start text-light">Robotics for Extreme Environments Group<br>The University of Manchester</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card"><img class="card-img w-100 d-block" src="assets/img/feature/feature-2.png">
+                                            <div class="card-img-overlay">
+                                                <h4 class="text-start text-light">Dataset</h4>
+                                                <h1 class="text-start text-light">Newer College Dataset</h1>
+                                                <h5 class="text-start text-light">Dynamic Robot Systems Group<br>The University of Oxford</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card"><img class="card-img w-100 d-block" src="assets/img/feature/feature-3.png">
+                                            <div class="card-img-overlay">
+                                                <h4 class="text-start text-light">Software</h4>
+                                                <h1 class="text-start text-light">ROS-Unity Point Cloud Streaming</h1>
+                                                <h5 class="text-start text-light">Robotics for Extreme Environments Group<br>The University of Manchester</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card"><img class="card-img w-100 d-block" src="assets/img/feature/feature-4.png">
+                                            <div class="card-img-overlay shadow-none">
+                                                <h4 class="text-start text-light">Simulation</h4>
+                                                <h1 class="text-start text-light">Nuclear Decommissioning Robot</h1>
+                                                <h5 class="text-start text-light">Robotics for Extreme Environments Group<br>The University of Manchester</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card"><img class="card-img w-100 d-block" src="assets/img/feature/feature-5.png">
+                                            <div class="card-img-overlay shadow-none">
+                                                <h1 class="text-start text-light">Follow @Robot_Myths on TikTok</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+                                <ol class="carousel-indicators">
+                                    <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                    <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                                    <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                                    <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                                    <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body shadow-none" style="height: 459.594px;">
+                                    <h4 class="text-dark card-title">How to Use This Inventory</h4>
+                                    <p class="text-dark m-auto card-text">Here, you will find various resources for robotics such as tutorials, digital assets, software, simulations, <br>and more! Use the side bar on your left to view individual entries or type in keywords on the search bar.<br><br>Please read and agree to the following terms and conditions:<br><br></p>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">BSD 3-Clause "Revised" License</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p><br>Copyright (c) 2022, Robotki<br><br>Redistribution and use in source and binary forms, with or without<br>modification, are permitted provided that the following conditions are met:<br><br>1. Redistributions of source code must retain the above copyright notice, this<br> list of conditions and the following disclaimer.<br><br>2. Redistributions in binary form must reproduce the above copyright notice,<br> this list of conditions and the following disclaimer in the documentation<br> and/or other materials provided with the distribution.<br><br>3. Neither the name of the copyright holder nor the names of its<br> contributors may be used to endorse or promote products derived from<br> this software without specific prior written permission.<br><br>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"<br>AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE<br>IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE<br>DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE<br>FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL<br>DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR<br>SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER<br>CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,<br>OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE<br>OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br><br></p>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-success" type="button" data-bs-dismiss="modal">I Agree</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-2">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title text-dark">Data Privacy and Protection</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="text-dark">Privacy Policy&nbsp;<br>==============<br><br>Last updated: January 25, 2022<br><br>This Privacy Policy describes Our policies and procedures on the collection,<br>use and disclosure of Your information when You use the Service and tells You<br>about Your privacy rights and how the law protects You.<br><br>We use Your Personal data to provide and improve the Service. By using the<br>Service, You agree to the collection and use of information in accordance with<br>this Privacy Policy. This Privacy Policy has been created with the help of the<br>[Privacy Policy Template](https://www.privacypolicies.com/blog/privacy-policy-<br>template/).<br><br>Interpretation and Definitions&nbsp;<br>==============================<br><br>Interpretation&nbsp;<br>--------------<br><br>The words of which the initial letter is capitalized have meanings defined<br>under the following conditions. The following definitions shall have the same<br>meaning regardless of whether they appear in singular or in plural.<br><br>Definitions&nbsp;<br>-----------<br><br>For the purposes of this Privacy Policy:<br><br>&nbsp;* Account means a unique account created for You to access our Service or<br>&nbsp;&nbsp;parts of our Service.<br><br>&nbsp;* Company (referred to as either "the Company", "We", "Us" or "Our" in this<br>&nbsp;&nbsp;Agreement) refers to Robot Knowledge Inventory.<br><br>&nbsp;* Cookies are small files that are placed on Your computer, mobile device or<br>&nbsp;&nbsp;any other device by a website, containing the details of Your browsing<br>&nbsp;&nbsp;history on that website among its many uses.<br><br>&nbsp;* Country refers to: United Kingdom<br><br>&nbsp;* Device means any device that can access the Service such as a computer, a<br>&nbsp;&nbsp;cellphone or a digital tablet.<br><br>&nbsp;* Personal Data is any information that relates to an identified or<br>&nbsp;&nbsp;identifiable individual.<br><br>&nbsp;* Service refers to the Website.<br><br>&nbsp;* Service Provider means any natural or legal person who processes the data<br>&nbsp;&nbsp;on behalf of the Company. It refers to third-party companies or<br>&nbsp;&nbsp;individuals employed by the Company to facilitate the Service, to provide<br>&nbsp;&nbsp;the Service on behalf of the Company, to perform services related to the<br>&nbsp;&nbsp;Service or to assist the Company in analyzing how the Service is used.<br><br>&nbsp;* Usage Data refers to data collected automatically, either generated by the<br>&nbsp;&nbsp;use of the Service or from the Service infrastructure itself (for example,<br>&nbsp;&nbsp;the duration of a page visit).<br><br>&nbsp;* Website refers to Robot Knowledge Inventory, accessible from<br>&nbsp;&nbsp;<br><br>&nbsp;* You means the individual accessing or using the Service, or the company,<br>&nbsp;&nbsp;or other legal entity on behalf of which such individual is accessing or<br>&nbsp;&nbsp;using the Service, as applicable.<br><br><br>Collecting and Using Your Personal Data&nbsp;<br>=======================================<br><br>Types of Data Collected&nbsp;<br>-----------------------<br><br>Personal Data&nbsp;<br>~~~~~~~~~~~~~<br><br>While using Our Service, We may ask You to provide Us with certain personally<br>identifiable information that can be used to contact or identify You.<br>Personally identifiable information may include, but is not limited to:<br><br>&nbsp;* Email address<br><br>&nbsp;* First name and last name<br><br>&nbsp;* Usage Data<br><br><br>Usage Data&nbsp;<br>~~~~~~~~~~<br><br>Usage Data is collected automatically when using the Service.<br><br>Usage Data may include information such as Your Device's Internet Protocol<br>address (e.g. IP address), browser type, browser version, the pages of our<br>Service that You visit, the time and date of Your visit, the time spent on<br>those pages, unique device identifiers and other diagnostic data.<br><br>When You access the Service by or through a mobile device, We may collect<br>certain information automatically, including, but not limited to, the type of<br>mobile device You use, Your mobile device unique ID, the IP address of Your<br>mobile device, Your mobile operating system, the type of mobile Internet<br>browser You use, unique device identifiers and other diagnostic data.<br><br>We may also collect information that Your browser sends whenever You visit our<br>Service or when You access the Service by or through a mobile device.<br><br>Tracking Technologies and Cookies&nbsp;<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><br>We use Cookies and similar tracking technologies to track the activity on Our<br>Service and store certain information. Tracking technologies used are beacons,<br>tags, and scripts to collect and track information and to improve and analyze<br>Our Service. The technologies We use may include:<br><br>&nbsp;* Cookies or Browser Cookies. A cookie is a small file placed on Your<br>&nbsp;&nbsp;Device. You can instruct Your browser to refuse all Cookies or to indicate<br>&nbsp;&nbsp;when a Cookie is being sent. However, if You do not accept Cookies, You<br>&nbsp;&nbsp;may not be able to use some parts of our Service. Unless you have adjusted<br>&nbsp;&nbsp;Your browser setting so that it will refuse Cookies, our Service may use<br>&nbsp;&nbsp;Cookies.<br>&nbsp;* Flash Cookies. Certain features of our Service may use local stored<br>&nbsp;&nbsp;objects (or Flash Cookies) to collect and store information about Your<br>&nbsp;&nbsp;preferences or Your activity on our Service. Flash Cookies are not managed<br>&nbsp;&nbsp;by the same browser settings as those used for Browser Cookies. For more<br>&nbsp;&nbsp;information on how You can delete Flash Cookies, please read "Where can I<br>&nbsp;&nbsp;change the settings for disabling, or deleting local shared objects?"<br>&nbsp;&nbsp;available at &nbsp;&nbsp;shared-objects-<br>&nbsp;&nbsp;flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_&gt;<br>&nbsp;* Web Beacons. Certain sections of our Service and our emails may contain<br>&nbsp;&nbsp;small electronic files known as web beacons (also referred to as clear<br>&nbsp;&nbsp;gifs, pixel tags, and single-pixel gifs) that permit the Company, for<br>&nbsp;&nbsp;example, to count users who have visited those pages or opened an email<br>&nbsp;&nbsp;and for other related website statistics (for example, recording the<br>&nbsp;&nbsp;popularity of a certain section and verifying system and server<br>&nbsp;&nbsp;integrity).<br><br>Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on<br>Your personal computer or mobile device when You go offline, while Session<br>Cookies are deleted as soon as You close Your web browser. Learn more about<br>cookies: [Cookies by PrivacyPolicies<br>Generator](https://www.privacypolicies.com/blog/privacy-policy-<br>template/#Use_Of_Cookies_Log_Files_And_Tracking).<br><br>We use both Session and Persistent Cookies for the purposes set out below:<br><br>&nbsp;* Necessary / Essential Cookies<br><br>&nbsp;&nbsp;Type: Session Cookies<br><br>&nbsp;&nbsp;Administered by: Us<br><br>&nbsp;&nbsp;Purpose: These Cookies are essential to provide You with services<br>&nbsp;&nbsp;available through the Website and to enable You to use some of its<br>&nbsp;&nbsp;features. They help to authenticate users and prevent fraudulent use of<br>&nbsp;&nbsp;user accounts. Without these Cookies, the services that You have asked for<br>&nbsp;&nbsp;cannot be provided, and We only use these Cookies to provide You with<br>&nbsp;&nbsp;those services.<br><br>&nbsp;* Cookies Policy / Notice Acceptance Cookies<br><br>&nbsp;&nbsp;Type: Persistent Cookies<br><br>&nbsp;&nbsp;Administered by: Us<br><br>&nbsp;&nbsp;Purpose: These Cookies identify if users have accepted the use of cookies<br>&nbsp;&nbsp;on the Website.<br><br>&nbsp;* Functionality Cookies<br><br>&nbsp;&nbsp;Type: Persistent Cookies<br><br>&nbsp;&nbsp;Administered by: Us<br><br>&nbsp;&nbsp;Purpose: These Cookies allow us to remember choices You make when You use<br>&nbsp;&nbsp;the Website, such as remembering your login details or language<br>&nbsp;&nbsp;preference. The purpose of these Cookies is to provide You with a more<br>&nbsp;&nbsp;personal experience and to avoid You having to re-enter your preferences<br>&nbsp;&nbsp;every time You use the Website.<br><br>For more information about the cookies we use and your choices regarding<br>cookies, please visit our Cookies Policy or the Cookies section of our Privacy<br>Policy.<br><br>Use of Your Personal Data&nbsp;<br>-------------------------<br><br>The Company may use Personal Data for the following purposes:<br><br>&nbsp;* To provide and maintain our Service , including to monitor the usage of<br>&nbsp;&nbsp;our Service.<br><br>&nbsp;* To manage Your Account: to manage Your registration as a user of the<br>&nbsp;&nbsp;Service. The Personal Data You provide can give You access to different<br>&nbsp;&nbsp;functionalities of the Service that are available to You as a registered<br>&nbsp;&nbsp;user.<br><br>&nbsp;* For the performance of a contract: the development, compliance and<br>&nbsp;&nbsp;undertaking of the purchase contract for the products, items or services<br>&nbsp;&nbsp;You have purchased or of any other contract with Us through the Service.<br><br>&nbsp;* To contact You: To contact You by email, telephone calls, SMS, or other<br>&nbsp;&nbsp;equivalent forms of electronic communication, such as a mobile<br>&nbsp;&nbsp;application's push notifications regarding updates or informative<br>&nbsp;&nbsp;communications related to the functionalities, products or contracted<br>&nbsp;&nbsp;services, including the security updates, when necessary or reasonable for<br>&nbsp;&nbsp;their implementation.<br><br>&nbsp;* To provide You with news, special offers and general information about<br>&nbsp;&nbsp;other goods, services and events which we offer that are similar to those<br>&nbsp;&nbsp;that you have already purchased or enquired about unless You have opted<br>&nbsp;&nbsp;not to receive such information.<br><br>&nbsp;* To manage Your requests: To attend and manage Your requests to Us.<br><br>&nbsp;* For business transfers: We may use Your information to evaluate or conduct<br>&nbsp;&nbsp;a merger, divestiture, restructuring, reorganization, dissolution, or<br>&nbsp;&nbsp;other sale or transfer of some or all of Our assets, whether as a going<br>&nbsp;&nbsp;concern or as part of bankruptcy, liquidation, or similar proceeding, in<br>&nbsp;&nbsp;which Personal Data held by Us about our Service users is among the assets<br>&nbsp;&nbsp;transferred.<br><br>&nbsp;* For other purposes : We may use Your information for other purposes, such<br>&nbsp;&nbsp;as data analysis, identifying usage trends, determining the effectiveness<br>&nbsp;&nbsp;of our promotional campaigns and to evaluate and improve our Service,<br>&nbsp;&nbsp;products, services, marketing and your experience.<br><br><br>We may share Your personal information in the following situations:<br><br>&nbsp;* With Service Providers: We may share Your personal information with<br>&nbsp;&nbsp;Service Providers to monitor and analyze the use of our Service, to<br>&nbsp;&nbsp;contact You.<br>&nbsp;* For business transfers: We may share or transfer Your personal information<br>&nbsp;&nbsp;in connection with, or during negotiations of, any merger, sale of Company<br>&nbsp;&nbsp;assets, financing, or acquisition of all or a portion of Our business to<br>&nbsp;&nbsp;another company.<br>&nbsp;* With Affiliates: We may share Your information with Our affiliates, in<br>&nbsp;&nbsp;which case we will require those affiliates to honor this Privacy Policy.<br>&nbsp;&nbsp;Affiliates include Our parent company and any other subsidiaries, joint<br>&nbsp;&nbsp;venture partners or other companies that We control or that are under<br>&nbsp;&nbsp;common control with Us.<br>&nbsp;* With business partners: We may share Your information with Our business<br>&nbsp;&nbsp;partners to offer You certain products, services or promotions.<br>&nbsp;* With other users: when You share personal information or otherwise<br>&nbsp;&nbsp;interact in the public areas with other users, such information may be<br>&nbsp;&nbsp;viewed by all users and may be publicly distributed outside.<br>&nbsp;* With Your consent : We may disclose Your personal information for any<br>&nbsp;&nbsp;other purpose with Your consent.<br><br>Retention of Your Personal Data&nbsp;<br>-------------------------------<br><br>The Company will retain Your Personal Data only for as long as is necessary<br>for the purposes set out in this Privacy Policy. We will retain and use Your<br>Personal Data to the extent necessary to comply with our legal obligations<br>(for example, if we are required to retain your data to comply with applicable<br>laws), resolve disputes, and enforce our legal agreements and policies.<br><br>The Company will also retain Usage Data for internal analysis purposes. Usage<br>Data is generally retained for a shorter period of time, except when this data<br>is used to strengthen the security or to improve the functionality of Our<br>Service, or We are legally obligated to retain this data for longer time<br>periods.<br><br>Transfer of Your Personal Data&nbsp;<br>------------------------------<br><br>Your information, including Personal Data, is processed at the Company's<br>operating offices and in any other places where the parties involved in the<br>processing are located. It means that this information may be transferred to —<br>and maintained on — computers located outside of Your state, province, country<br>or other governmental jurisdiction where the data protection laws may differ<br>than those from Your jurisdiction.<br><br>Your consent to this Privacy Policy followed by Your submission of such<br>information represents Your agreement to that transfer.<br><br>The Company will take all steps reasonably necessary to ensure that Your data<br>is treated securely and in accordance with this Privacy Policy and no transfer<br>of Your Personal Data will take place to an organization or a country unless<br>there are adequate controls in place including the security of Your data and<br>other personal information.<br><br>Disclosure of Your Personal Data&nbsp;<br>--------------------------------<br><br>Business Transactions&nbsp;<br>~~~~~~~~~~~~~~~~~~~~~<br><br>If the Company is involved in a merger, acquisition or asset sale, Your<br>Personal Data may be transferred. We will provide notice before Your Personal<br>Data is transferred and becomes subject to a different Privacy Policy.<br><br>Law enforcement&nbsp;<br>~~~~~~~~~~~~~~~<br><br>Under certain circumstances, the Company may be required to disclose Your<br>Personal Data if required to do so by law or in response to valid requests by<br>public authorities (e.g. a court or a government agency).<br><br>Other legal requirements&nbsp;<br>~~~~~~~~~~~~~~~~~~~~~~~~<br><br>The Company may disclose Your Personal Data in the good faith belief that such<br>action is necessary to:<br><br>&nbsp;* Comply with a legal obligation<br>&nbsp;* Protect and defend the rights or property of the Company<br>&nbsp;* Prevent or investigate possible wrongdoing in connection with the Service<br>&nbsp;* Protect the personal safety of Users of the Service or the public<br>&nbsp;* Protect against legal liability<br><br>Security of Your Personal Data&nbsp;<br>------------------------------<br><br>The security of Your Personal Data is important to Us, but remember that no<br>method of transmission over the Internet, or method of electronic storage is<br>100% secure. While We strive to use commercially acceptable means to protect<br>Your Personal Data, We cannot guarantee its absolute security.<br><br>Children's Privacy&nbsp;<br>==================<br><br>Our Service does not address anyone under the age of 13. We do not knowingly<br>collect personally identifiable information from anyone under the age of 13.<br>If You are a parent or guardian and You are aware that Your child has provided<br>Us with Personal Data, please contact Us. If We become aware that We have<br>collected Personal Data from anyone under the age of 13 without verification<br>of parental consent, We take steps to remove that information from Our<br>servers.<br><br>If We need to rely on consent as a legal basis for processing Your information<br>and Your country requires consent from a parent, We may require Your parent's<br>consent before We collect and use that information.<br><br>Links to Other Websites&nbsp;<br>=======================<br><br>Our Service may contain links to other websites that are not operated by Us.<br>If You click on a third party link, You will be directed to that third party's<br>site. We strongly advise You to review the Privacy Policy of every site You<br>visit.<br><br>We have no control over and assume no responsibility for the content, privacy<br>policies or practices of any third party sites or services.<br><br>Changes to this Privacy Policy&nbsp;<br>==============================<br><br>We may update Our Privacy Policy from time to time. We will notify You of any<br>changes by posting the new Privacy Policy on this page.<br><br>We will let You know via email and/or a prominent notice on Our Service, prior<br>to the change becoming effective and update the "Last updated" date at the top<br>of this Privacy Policy.<br><br>You are advised to review this Privacy Policy periodically for any changes.<br>Changes to this Privacy Policy are effective when they are posted on this<br>page.<br><br>Contact Us&nbsp;<br>==========<br><br>If you have any questions about this Privacy Policy, You can contact us:<br><br>&nbsp;* By email: robotknowledgeinventory@gmail.com<br><br></p>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-success" type="button" data-bs-dismiss="modal">I Agree</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-toolbar">
+                                        <div class="btn-group" role="group"></div>
+                                        <div class="btn-group" role="group"></div>
+                                    </div><button class="btn btn-danger" type="button" data-bs-target="#modal-1" data-bs-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
+                                        </svg>&nbsp; BSD-3 "New" License</button><button class="btn btn-warning" type="button" style="margin: 0px;margin-left: 10px;" data-bs-target="#modal-2" data-bs-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-shield-lock">
+                                            <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"></path>
+                                            <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"></path>
+                                        </svg>&nbsp; &nbsp;Data Privacy and Protection</button>
+                                    <p><br></p>
+                                    <h4 class="text-dark card-title">Submitting to the Database</h4>
+                                    <p class="text-dark card-text">We're looking to grow this inventory! If you want to submit your work to our database, click on the submit button below and follow the instructions. Alternatively, you can also email us and we will send you a template.<br><br><button class="btn btn-info text-center border rounded" type="button" style="background: #1485ee;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-upload" style="color: rgb(255,255,255);">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"></path>
+                                            </svg>&nbsp; &nbsp;<a class="link-dark" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="https://forms.gle/pyXd1uEFwbsxK6rz8" style="text-decoration: none;color: rgb(255,255,255);" title="*Requires a Google account">Submit to the Database</a></button><br></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"></div>
+                </div>
+                <div class="col" style="margin-top: 22px;">
+                    <section class="features-clean" style="height: 328px;min-height: 0px;">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body" style="height: 325px;">
+                                    <section class="features-clean" style="margin-top: -33px;height: 275px;">
+                                        <div class="container">
+                                            <div class="intro"></div>
+                                            <div class="row features">
+                                                <div class="col-sm-6 col-lg-4 item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" class="icon" style="color: var(--bs-gray-900);">
+                                                        <path d="M14.1254 13H10.1254V15H14.1254V13Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.12537 13C9.22994 13 10.1254 12.1046 10.1254 11C10.1254 9.89543 9.22994 9 8.12537 9C7.0208 9 6.12537 9.89543 6.12537 11C6.12537 12.1046 7.0208 13 8.12537 13ZM8.12537 11.5C8.40151 11.5 8.62537 11.2761 8.62537 11C8.62537 10.7239 8.40151 10.5 8.12537 10.5C7.84922 10.5 7.62537 10.7239 7.62537 11C7.62537 11.2761 7.84922 11.5 8.12537 11.5Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1254 11C18.1254 12.1046 17.2299 13 16.1254 13C15.0208 13 14.1254 12.1046 14.1254 11C14.1254 9.89543 15.0208 9 16.1254 9C17.2299 9 18.1254 9.89543 18.1254 11ZM16.6254 11C16.6254 11.2761 16.4015 11.5 16.1254 11.5C15.8492 11.5 15.6254 11.2761 15.6254 11C15.6254 10.7239 15.8492 10.5 16.1254 10.5C16.4015 10.5 16.6254 10.7239 16.6254 11Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.74884 14.6663C3.73056 16.6421 5.76939 18 8.12537 18H16.1254C18.5654 18 20.6652 16.5435 21.6029 14.4525C22.3722 13.9093 22.8746 13.0133 22.8746 12C22.8746 10.9867 22.3722 10.0907 21.6029 9.54753C20.6652 7.45651 18.5654 6 16.1254 6H8.12537C5.76939 6 3.73056 7.3579 2.74884 9.33375C1.78448 9.83263 1.12537 10.8393 1.12537 12C1.12537 13.1607 1.78448 14.1674 2.74884 14.6663ZM8.12537 8H16.1254C17.5088 8 18.7282 8.70234 19.4465 9.76991C19.7227 10.4593 19.8746 11.2119 19.8746 12C19.8746 12.7881 19.7227 13.5407 19.4465 14.2301C18.7282 15.2977 17.5088 16 16.1254 16H8.12537C5.91623 16 4.12537 14.2091 4.12537 12C4.12537 9.79086 5.91623 8 8.12537 8Z" fill="currentColor"></path>
+                                                    </svg>
+                                                    <h3 class="name">Robots</h3>
+                                                    <p class="description">Aerial Robots, Aquatic Robots, Ground Robots, Manipulators, Robot Models, Robot Software</p>
+                                                </div>
+                                                <div class="col-sm-6 col-lg-4 item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-code-slash icon" style="color: var(--bs-gray-900);">
+                                                        <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"></path>
+                                                    </svg>
+                                                    <h3 class="name">Software</h3>
+                                                    <p class="description">Platform Agnostic Software, Artificial Intelligence, Navigation, Perception, Teleoperation</p>
+                                                </div>
+                                                <div class="col-sm-6 col-lg-4 item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-seam icon" style="color: var(--bs-gray-900);">
+                                                        <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+                                                    </svg>
+                                                    <h3 class="name">Digital Assets</h3>
+                                                    <p class="description">Simulations, Simulation Environments, 3D Models</p>
+                                                </div>
+                                                <div class="col-sm-6 col-lg-4 item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-clipboard-data icon" style="color: var(--bs-gray-900);">
+                                                        <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"></path>
+                                                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                                                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+                                                    </svg>
+                                                    <h3 class="name">Datasets</h3>
+                                                    <p class="description">LiDAR Data, Continuous-Wave Radar Data, and more coming soon!</p>
+                                                </div>
+                                                <div class="col-sm-6 col-lg-4 item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-award icon" style="color: var(--bs-gray-900);">
+                                                        <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"></path>
+                                                        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"></path>
+                                                    </svg>
+                                                    <h3 class="name">Tutorials</h3>
+                                                    <p class="description">ROS Basic and Advanced Tutorials</p>
+                                                </div>
+                                                <div class="col-sm-6 col-lg-4 item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-zip icon" style="color: var(--bs-gray-900);">
+                                                        <path d="M6.5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.109 0l-.93-.62a1 1 0 0 1-.415-1.074l.4-1.599V7.5zm2 0h-1v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.93-.62-.4-1.598a1 1 0 0 1-.03-.243V7.5z"></path>
+                                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm5.5-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9v1H8v1h1v1H8v1h1v1H7.5V5h-1V4h1V3h-1V2h1V1z"></path>
+                                                    </svg>
+                                                    <h3 class="name">Documents</h3>
+                                                    <p class="description">Publications, White Papers, Featured Articles</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <section class="photo-gallery" style="height: 395.484px;margin-top: 22px;">
+                    <div class="container" style="padding: 10px;height: 395.141px;">
+                        <div class="intro">
+                            <h4 class="text-center" style="margin-top: 25px;">Contributors</h4>
+                        </div>
+                        <div class="row photos" data-bss-baguettebox="">
+                            <div class="col-sm-6 col-md-4 col-lg-3 item"><a><img class="img-fluid" src="assets/img/logos/logo-uom.png"></a></div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 item"><a><img class="img-fluid" src="assets/img/logos/logo-hwu.png"></a></div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 item"><a><img class="img-fluid" src="assets/img/logos/logo-rain.png"></a></div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 item"><a><img class="img-fluid" src="assets/img/logos/logo-orca.png"></a></div>
+                        </div>
+                    </div>
+                </section>
+                <footer class="footer-basic" style="margin-top: 22px;">
+                    <div class="social"><a href="mailto: robotknowledgeinventory@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-mail">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                <polyline points="3 7 12 13 21 7"></polyline>
+                            </svg></a><a href="https://github.com/robotki"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-brand-github">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+                            </svg></a><a href="https://www.tiktok.com/@robot_myths"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-brand-tiktok">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M9 12a4 4 0 1 0 4 4v-12a5 5 0 0 0 5 5"></path>
+                            </svg></a><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-brand-instagram">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
+                            </svg></a></div>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Home</a></li>
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><a href="#">FAQs</a></li>
+                        <li class="list-inline-item"><a href="#">Licensing</a></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="copyright">Robotki: The Robot Knowledge Inventory by&nbsp; UoM-HW Collaboration © 2022</p>
+                </footer>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
-

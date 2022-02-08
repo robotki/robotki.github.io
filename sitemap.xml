@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>/Unused/login.html</loc>
+        <loc>/archive/login.html</loc>
     </url>
     <url>
-        <loc>/Unused/profile.html</loc>
+        <loc>/archive/profile.html</loc>
     </url>
     <url>
-        <loc>/Unused/register.html</loc>
+        <loc>/archive/register.html</loc>
     </url>
     <url>
-        <loc>/Unused/table.html</loc>
+        <loc>/archive/table.html</loc>
     </url>
     <url>
         <loc>/assets.html</loc>

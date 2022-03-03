@@ -1,0 +1,1559 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#"
+     xml:base="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrl2="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JackalVersionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JackalVersionInfo">
+        <JackalVersionInfo>Version 1.1
+By Dr: Osama Zaki (Senior Research Assosciate)</JackalVersionInfo>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#versionInfo"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+        <owl:versionInfo></owl:versionInfo>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#cause-high-temperature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#cause-high-temperature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#is_connected_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#is_connected_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Anderson_Power_Pole"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Charging_In"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#GPS_Antenna"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#HMI_Panale"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Charging_Connector_Out"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Left"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#HMI"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Integrated_GPS"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Molex_Charging"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Battery_In"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Charging_Connector_In"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#may-cause-high-temperature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#may-cause-high-temperature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#transit-after-x-seconds-to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#transit-after-x-seconds-to"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#transit-on-high-temprature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#transit-on-high-temprature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#transit-when-noOdometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#transit-when-noOdometry"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_REF_left_motor_temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_REF_left_motor_temperature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_STATUS_l_m_temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_STATUS_l_m_temperature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header__stamp_secs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header__stamp_secs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header_frame_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header_frame_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header_seq -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header_seq">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header_stamp_nsecs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_header_stamp_nsecs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_hardware_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_hardware_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_level">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_message -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_message">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_vs_k_velocity_joy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_vs_k_velocity_joy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_vs_k_velocity_joy_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_diagnostics_status_vs_k_velocity_joy_value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_actual_mode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_actual_mode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_commaned_mode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_commaned_mode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_frame_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_frame_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_seq -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_seq">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_stamp_nsecs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_stamp_nsecs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_stamp_secs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_header_stamp_secs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_bridgeTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_bridgeTemperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_current -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_driverFault -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_driverFault">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_dutyCycle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_dutyCycle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_measuredTravel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_measuredTravel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_measuredVelocity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_measuredVelocity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_temperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_mcu_temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_mcu_temperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Micro_Control_Unit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_pcb_temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_pcb_temperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_bridgeTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_bridgeTemperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_current -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_driverFault -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_driverFault">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_dutyCycle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_dutyCycle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_measuredTravel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_measuredTravel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_measuredVelocity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_measuredVelocity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_r_m_temperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_computer_current -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_computer_current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_connection_uptime_nsecs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_connection_uptime_nsecs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_connection_uptime_secs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_connection_uptime_secs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_drive_current -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_drive_current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_driver_external_stop_present -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_driver_external_stop_present">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_driver_external_stop_stopped -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_driver_external_stop_stopped">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_drivers_active -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_drivers_active">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_hardware_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_hardware_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_frame_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_frame_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_seq -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_seq">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_stamp_nsecs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_stamp_nsecs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_stamp_secs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_header_stamp_secs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_mcu_uptime_nsecs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_mcu_uptime_nsecs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_mcu_uptime_secs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_mcu_uptime_secs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_measured_12v -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_measured_12v">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_measured_5v -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_measured_5v">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_measured_battery -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_measured_battery">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_power_consumed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_power_consumed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_total_current -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_total_current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_total_current_peak -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_total_current_peak">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_user_current -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_status_user_current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Accelerometer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Accelerometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#IMU"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Anderson_Power_Pole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Anderson_Power_Pole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Connections"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Power_Switch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Charging_In -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Charging_In">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Connections -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Connections">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Ref -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Ref">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battries_Automata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battries_Automata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Bluetooth_teleop_Joy_node -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Bluetooth_teleop_Joy_node">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Diagnostics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Diagnostics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Diagnostics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_ROS_Topics_CSV_BAG_LIVE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Ekf_localization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Ekf_localization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Diagnostics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_ROS_Topics_CSV_BAG_LIVE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_15A_12V -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_15A_12V">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_20A_24V -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_20A_24V">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_15A_12V"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_20A_24V_Battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_20A_24V_Battery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_5A_5V -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_5A_5V">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#GPS_Antenna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#GPS_Antenna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Gyroscope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Gyroscope">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#IMU"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#HMI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#HMI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#HMI_Panale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#HMI_Panale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#IMU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#IMU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Integrated_GPS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Integrated_GPS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_HW_Model_Hierarchy_and_Automoata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_HW_Model_Hierarchy_and_Automoata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal">
+        <JackalVersionInfo></JackalVersionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_HW_Model_Hierarchy_and_Automoata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_HW_Model_Hierarchy_and_Automoata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_ROS_Topics_CSV_BAG_LIVE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_ROS_Topics_CSV_BAG_LIVE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_node -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_node">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Diagnostics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motors_Controller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Encoder_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Encoder_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Power_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Power_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Temp_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Temp_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Left_M_Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Magnetometer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Magnetometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#IMU"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Micro_Control_Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Micro_Control_Unit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA_USB_C_rosserial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA_USB_C_rosserial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_C"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Molex_Charging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Molex_Charging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery_Connections"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Backward -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Backward">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Braking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Braking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Encoder_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Encoder_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Forward -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Forward">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Power_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Power_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Resting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Resting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Stalling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Stalling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Starting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Starting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Stopped -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Stopped">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Tempreture_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Tempreture_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Turning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Turning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Automata_States"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right_Encoder_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right_Encoder_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right_Power_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right_Power_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right_Tempreture_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right_Tempreture_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motors_Controller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motors_Controller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Micro_Control_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Normal_states -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Normal_states">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battries_Automata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Battery_In -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Battery_In">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Charging_Connector_In -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Charging_Connector_In">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Charging_Connector_Out -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_Charging_Connector_Out">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_USB_MICRO_rosserial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#PCB_USB_MICRO_rosserial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_MICRO"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#POWER_PORT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#POWER_PORT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Possible_states -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Possible_states">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battries_Automata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Power_Switch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Power_Switch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circuit_Board_Monitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circuit_Board_Monitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circuit_Board_PWR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circuit_Board_PWR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Left -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Left">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Right -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Right">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ROS_Feedback_Left_Motor_Temprature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ROS_Feedback_Left_Motor_Temprature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Feedback"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motors_Controller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Encoder_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Encoder_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Power_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Power_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Temp_Connector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Temp_Connector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Right_M_Driver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Sensed_states -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Sensed_states">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Battries_Automata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Status">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Jackal_ROS_Topics_CSV_BAG_LIVE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Twist_mux">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Diagnostics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#UPB_PORT1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#UPB_PORT1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Fuse_15A_12V"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_A -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_A">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_C -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_C">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_Hub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_Hub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_A"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_MICRO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_MICRO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Embedded_Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_Port_Chasis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#USB_Port_Chasis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Printed_Circut_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board_Monitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board_Monitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board_PWR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board_PWR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#User_Power_Board"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Left"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Wheel4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Pully_Belt_Left"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Antenna1_Chasis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Antenna1_Chasis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Antenna2_Chasis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Antenna2_Chasis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#JChassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Module -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Module">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Mini_PC_NVIDIA"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_PORT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_PORT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#WiFi_Module"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_REF_left_motor_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_REF_left_motor_temperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+        <has_REF_left_motor_temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#double">22.0</has_REF_left_motor_temperature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_STATUS_left_motor_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_STATUS_left_motor_temperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+        <has_STATUS_l_m_temperature></has_STATUS_l_m_temperature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_TEST_motor_left_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_TEST_motor_left_temperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#valueREF">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#vlaueLive">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#valueLive">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_REF_left_motor_temperature"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#ind_REF_left_motor_temperature"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#valueREF"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#has_feedback_l_m_temperature"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#vlaueLive"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#valueLive"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#valueREF"/>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#Motor_Left_Resting"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/oz4/ontologies/2021/8/untitled-ontology-31#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+
+	<xacro:property name="PI" value="3.1415926535897931"/>
+
+	<!-- standard distances -->
+	<xacro:property name="trunk_x" value="0.23"/> 		<!-- distance between front & back  joints -->
+	<xacro:property name="trunk_y" value="0.18"/> 		<!-- distance between left  & right joints -->
+	<xacro:property name="trunk_z" value="0.07"/>
+
+	<!--  Joint parameters -->
+	<xacro:property name="MX64_damping"   value="0.15" /> 					<!-- real: 0.2 		-->
+	<xacro:property name="MX64_effort"    value="2.85" /> 					<!-- real: 2.85 Nm 	-->
+	<xacro:property name="MX64_velocity"  value="5.23" />
+
+	<xacro:property name="cox_joint_lim" value="1.00" />	<!-- 57deg -->
+	<xacro:property name="cxm_joint_lim" value="0.84" />	<!-- 48deg -->
+	<xacro:property name="fem_joint_lim" value="2.22" />	<!-- 127deg -->
+	<xacro:property name="tib_joint_lim" value="2.79" /> 	<!-- 160.5 -->
+
+	<!-- Inertial values -->
+	<!-- Trunk  -->
+	<xacro:property name="xcom_trunk" value="0.0"/>
+	<xacro:property name="ycom_trunk" value="0.0"/>
+	<xacro:property name="zcom_trunk" value="0.0"/>
+	<xacro:property name="m_trunk" 	  value="1.58"/> <!-- initially 1.5 -->
+	<xacro:property name="ixx_trunk"  value="${ (m_trunk/12)*(trunk_y*trunk_y + trunk_z*trunk_z) } "/>
+	<xacro:property name="iyy_trunk"  value="${ (m_trunk/12)*(trunk_x*trunk_x + trunk_z*trunk_z) } "/>
+	<xacro:property name="izz_trunk"  value="${ (m_trunk/12)*(trunk_y*trunk_y + trunk_x*trunk_x) } "/>
+	<xacro:property name="ixy_trunk"  value="0.0"/>
+	<xacro:property name="ixz_trunk"  value="0.0"/>
+	<xacro:property name="iyz_trunk"  value="0.0"/>
+
+	<!-- Coxa assembly -->
+	<xacro:property name="coxa_l"     value="0.06"  />
+	<xacro:property name="coxa_w"     value="0.06"  />
+	<xacro:property name="coxa_d"     value="0.055" />
+	<xacro:property name="coxa_cl"    value="0.03" />
+	<xacro:property name="coxa_com_x" value="0.02471"  />
+	<xacro:property name="coxa_com_y" value="0"  />
+	<xacro:property name="coxa_com_z" value="0"  />
+	<xacro:property name="coxa_m"     value="0.0406" />
+	<xacro:property name="coxa_i_xx"  value="0.000038"  />
+	<xacro:property name="coxa_i_xy"  value="0.0"  />
+	<xacro:property name="coxa_i_xz"  value="0.0"  />
+	<xacro:property name="coxa_i_yy"  value="0.000038"  />
+	<xacro:property name="coxa_i_yz"  value="0.0"  />
+	<xacro:property name="coxa_i_zz"  value="0.000040"  />
+
+	<!-- Femur assembly -->
+	<xacro:property name="femur_l"     value="0.15" />
+	<xacro:property name="femur_w"     value="0.04" />
+	<xacro:property name="femur_d"     value="0.04" />
+	<xacro:property name="femur_cl"    value="0.15" />
+	<xacro:property name="femur_com_x" value="0.075"  />
+	<xacro:property name="femur_com_y" value="0"  />
+	<xacro:property name="femur_com_z" value="0"  />
+	<xacro:property name="femur_m"     value="0.35" />
+	<xacro:property name="femur_i_xx"  value="0.000014"  />
+	<xacro:property name="femur_i_xy"  value="0"  />
+	<xacro:property name="femur_i_xz"  value="0"  />
+	<xacro:property name="femur_i_yy"  value="0.000047"  />
+	<xacro:property name="femur_i_yz"  value="0"  />
+	<xacro:property name="femur_i_zz"  value="0.000051"  />
+
+	<!--  Tibia assembly -->
+	<xacro:property name="tibia_l" value="0.134" />
+	<xacro:property name="tibia_w" value="0.04" />
+	<xacro:property name="tibia_d" value="0.025" />
+	<xacro:property name="tibia_cl" value="0.06" />
+	<xacro:property name="tibia_com_x" value="0.0887"  	/>
+	<xacro:property name="tibia_com_y" value="0"  		/>
+	<xacro:property name="tibia_com_z" value="0"  		/>
+	<xacro:property name="tibia_m"     value="0.076" 	/>
+	<xacro:property name="tibia_i_xx"  value="0.000025" />
+	<xacro:property name="tibia_i_xy"  value="0"  		/>
+	<xacro:property name="tibia_i_xz"  value="0"  		/>
+	<xacro:property name="tibia_i_yy"  value="0.000105" />
+	<xacro:property name="tibia_i_yz"  value="0"  		/>
+	<xacro:property name="tibia_i_zz"  value="0.000117"  />
+
+	<!-- Foot -->
+	<xacro:property name="foot_r" value="0.016"   />
+	<xacro:property name="foot_m" value="0.040"   />
+	<xacro:property name="foot_I" value="0.000004" />
+	<!-- Rectangular box: m*(a^2 + b^2)/12 -->
+</robot>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+
+	<!-- Things that are needed only for Gazebo (not the physical robot). These include sensor and controller plugin specifications -->
+	<xacro:include filename="$(find corin_description)/urdfs/trunk/trunk.gazebo.xacro"/>
+
+	<link name="world"/>
+
+	<!-- ================================ Trunk ================================ -->
+
+	<xacro:macro name="RobotTrunk" params="name *origin">
+		<!-- Floating-base Joint -->
+		<joint name="${name}_qx_joint" type="revolute">
+			<axis xyz="1 0 0"/>
+			<origin xyz="0 0 0.15" rpy="0 0 0"/>
+			<limit effort="30." velocity="2.0" lower="-0.001" upper="0.001"/>
+			<dynamics damping="0.3" friction="0" />
+			<parent link="world"/>
+			<child link="trunk"/>
+		</joint>
+
+
+		<!-- Trunk link -->
+		<link name="trunk">
+			<inertial>
+				<origin xyz="${xcom_trunk} ${ycom_trunk} ${zcom_trunk}"/>
+				<mass value="${m_trunk}"/>
+				<inertia ixx="${ixx_trunk}" iyy="${iyy_trunk}" izz="${izz_trunk}"
+						 ixy="${ixy_trunk}" ixz="${ixz_trunk}" iyz="${iyz_trunk}"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="package://corin_description/meshes/Body.STL" scale="1 1 1"/>
+				</geometry>
+				<material name="orange"/>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://corin_description/meshes/Body_collision.STL" scale="1 1 1"/>
+				</geometry>
+				<material name="colli"/>
+			</collision>
+		</link>
+
+		<!-- Extensions -->
+		<xacro:trunk_gazebo name="trunk"/>
+
+		<transmission name="${name}_qx_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_qx_joint">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${name}_qx_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<gazebo reference="${name}_qx_joint">
+			<provideFeedback>true</provideFeedback>
+		</gazebo>
+
+	</xacro:macro>
+
+</robot>

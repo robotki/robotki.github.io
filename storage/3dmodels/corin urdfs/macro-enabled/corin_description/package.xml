@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>corin_description</name>
+  <version>0.0.0</version>
+  <description>The corin_description package</description>
+
+  <maintainer email="wilson@todo.todo">wilson</maintainer>
+  <license>BSD</license>
+  <author email="wilson@todo.todo">wilson</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>xacro</build_depend>
+  <build_depend>gazebo_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>gazebo_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  
+</package>

@@ -1,0 +1,1284 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+	<!-- START OF BODY SECTION!!!!-->
+	<link name="body">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0"/>
+			<mass value="1.58"/>
+			<inertia ixx="0.00491" iyy="0.007610" izz="0.01123"
+					 ixy="0.0" ixz="0.0" iyz="0.0"/> <!-- values above given to 3 sf, 10 sf values available in common.xacro -->
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="./meshes/Body2.obj" scale="1 1 1"/> <!--these used to be referenced via ros package, i gave the full file name and moved the files to the drake ws to avoid ROS issues while i figure all this out. Consider coming back and using ROS later to tidy this up -->
+			</geometry>
+			<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material> 
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="./meshes/Body_collision2.obj" scale="1 1 1"/>
+			</geometry>
+			<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+		</collision>
+	</link>
+	<!--END OF BODY SECTION!!!! -->
+
+
+
+	<!--START OF LEFT FRONT LEG SECTION!!!!-->
+	<!-- Joints -->
+	<!-- Coxa joint -->
+	<joint name="lf_q1_joint" type="revolute">
+		<origin xyz="0.115 0.09 0" rpy="0 0 0.873"/>
+		<parent link="body"/>
+		<child  link="lf_hipassembly"/>
+		<axis xyz="0 0 1"/>
+		
+		<limit effort="2.85" velocity="5.23" lower="-1.00" upper="1.00"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+	</joint>
+	<!-- Upper leg joint -->
+	<joint name="lf_q2_joint" type="revolute">
+		<origin xyz="0.06 0 0" rpy="1.571 0 0"/>
+		<parent link="lf_hipassembly"/>
+		<child  link="lf_upperleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.22" upper="2.22"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+						   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+	</joint>
+	<!-- Lower leg joint -->
+	<joint name="lf_q3_joint" type="revolute">
+		<origin xyz="0.15 0 0" rpy="0 0 0"/>
+		<parent link="lf_upperleg"/>
+		<child  link="lf_lowerleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.79" upper="2.79"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+						   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+	</joint>
+	<!-- Foot joint -->
+	<joint name="lf_foot_joint" type="fixed">
+		<origin xyz="0.134 0 0" rpy="0 0 0"/>
+		<parent link="lf_lowerleg"/>
+		<child  link="LF_FOOT"/>
+	</joint>
+
+
+	<!-- Links -->
+	<!-- Hip assembly link -->
+	<link name="lf_hipassembly">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		      <geometry>
+		        <mesh filename="./meshes/Coxa.STL" scale="1 1 1"/>
+		      </geometry>
+	      	<material name="2-turquoise">
+    			<color rgba="0 0.807 0.850 1.0" />
+  			</material>
+	    </visual>
+
+	    <collision>
+	    	<origin rpy="0 0 0" xyz="0 0 0"/>
+		    <geometry>
+		      <mesh filename="./meshes/Coxa_collision2.obj" scale="1 1 1"/>
+		    </geometry>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+  			</material>
+	    </collision>
+
+	    <inertial>
+	    	<origin xyz="0.02471 0 0"/>
+	      	<mass value="0.0406"/>
+	      	<inertia ixx="0.000038" ixy="0.0" ixz="0.0" iyy="0.000038" iyz="0.0" izz="0.000040"/>
+	    </inertial>
+	  </link>
+
+	<!-- Upper leg link -->
+	<link name="lf_upperleg">
+		<visual>
+	      	<geometry>
+	        	<mesh filename="./meshes/Femur.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<box size= "0.15 0.04 0.04"/>
+	      	</geometry>
+	      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.35"/>
+	      	<inertia ixx="0.000014" ixy="0" ixz="0" iyy="0.000047" iyz="0" izz="0.000051"/>
+	      	<origin xyz="0.075 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Lower leg link -->
+	<link name="lf_lowerleg">
+		<visual>
+	      	<geometry>
+	      		<mesh filename="./meshes/Tibia.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="1.571 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+						<mesh filename="./meshes/Tibia_collision2.obj" scale="1 1 1"/>
+	        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+	      	</geometry>
+	      	<origin xyz="0.0 0 0" rpy="1.571 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.076"/>
+	      	<inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000117"/>
+	      	<origin xyz="0.0887 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Foot link -->
+	<link name="LF_FOOT">
+		<visual>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.040"/>
+	      	<inertia ixx="0.000004" ixy="0" ixz="0" iyy="0.000004" iyz="0" izz="0.000004" />
+	      	<origin xyz="0 0 0"/>
+	    </inertial>
+	</link>
+	<!--END OF LEFT FRONT LEG SECTION!!!!-->
+
+
+
+	<!--START OF LEFT MIDDLE LEG SECTION!!!!-->
+	<!-- Joints -->
+	<!-- Coxa joint -->
+	<joint name="lm_q1_joint" type="revolute">
+		<origin xyz="0 0.09 0" rpy="0 0 1.571"/>
+		<parent link="body"/>
+		<child  link="lm_hipassembly"/>
+		<axis xyz="0 0 1"/>
+		
+		<limit effort="2.85" velocity="5.23" lower="-0.84" upper="0.84"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+	</joint>
+	<!-- Upper leg joint -->
+	<joint name="lm_q2_joint" type="revolute">
+		<origin xyz="0.06 0 0" rpy="1.571 0 0"/>
+		<parent link="lm_hipassembly"/>
+		<child  link="lm_upperleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.22" upper="2.22"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+						   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+	</joint>
+	<!-- Lower leg joint -->
+	<joint name="lm_q3_joint" type="revolute">
+		<origin xyz="0.15 0 0" rpy="0 0 0"/>
+		<parent link="lm_upperleg"/>
+		<child  link="lm_lowerleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.79" upper="2.79"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+						   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+	</joint>
+	<!-- Foot joint -->
+	<joint name="lm_foot_joint" type="fixed">
+		<origin xyz="0.134 0 0" rpy="0 0 0"/>
+		<parent link="lm_lowerleg"/>
+		<child  link="LM_FOOT"/>
+	</joint>
+
+
+	<!-- Links -->
+	<!-- Hip assembly link -->
+	<link name="lm_hipassembly">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		      <geometry>
+		        <mesh filename="./meshes/Coxa.STL" scale="1 1 1"/>
+		      </geometry>
+	      	<material name="2-turquoise">
+    			<color rgba="0 0.807 0.850 1.0" />
+  			</material>
+	    </visual>
+
+	    <collision>
+	    	<origin rpy="0 0 0" xyz="0 0 0"/>
+		    <geometry>
+		      <mesh filename="./meshes/Coxa_collision2.obj" scale="1 1 1"/>
+		    </geometry>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+  			</material>
+	    </collision>
+
+	    <inertial>
+	    	<origin xyz="0.02471 0 0"/>
+	      	<mass value="0.0406"/>
+	      	<inertia ixx="0.000038" ixy="0.0" ixz="0.0" iyy="0.000038" iyz="0.0" izz="0.000040"/>
+	    </inertial>
+	  </link>
+
+	<!-- Upper leg link -->
+	<link name="lm_upperleg">
+		<visual>
+	      	<geometry>
+	        	<mesh filename="./meshes/Femur.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<box size= "0.15 0.04 0.04"/>
+	      	</geometry>
+	      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.35"/>
+	      	<inertia ixx="0.000014" ixy="0" ixz="0" iyy="0.000047" iyz="0" izz="0.000051"/>
+	      	<origin xyz="0.075 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Lower leg link -->
+	<link name="lm_lowerleg">
+		<visual>
+	      	<geometry>
+	      		<mesh filename="./meshes/Tibia.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="1.571 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+						<mesh filename="./meshes/Tibia_collision2.obj" scale="1 1 1"/>
+	        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+	      	</geometry>
+	      	<origin xyz="0.0 0 0" rpy="1.571 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.076"/>
+	      	<inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000117"/>
+	      	<origin xyz="0.0887 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Foot link -->
+	<link name="LM_FOOT">
+		<visual>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.040"/>
+	      	<inertia ixx="0.000004" ixy="0" ixz="0" iyy="0.000004" iyz="0" izz="0.000004" />
+	      	<origin xyz="0 0 0"/>
+	    </inertial>
+	</link>
+	<!--END OF LEFT MIDDLE LEG SECTION!!!!-->
+
+
+
+	<!--START OF LEFT REAR LEG SECTION!!!!-->
+	<!-- Joints -->
+	<!-- Coxa joint -->
+	<joint name="lr_q1_joint" type="revolute">
+		<origin xyz="-0.115 0.09 0" rpy="0 0 2.269"/>
+		<parent link="body"/>
+		<child  link="lr_hipassembly"/>
+		<axis xyz="0 0 1"/>
+		
+		<limit effort="2.85" velocity="5.23" lower="-1.00" upper="1.00"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+	</joint>
+	<!-- Upper leg joint -->
+	<joint name="lr_q2_joint" type="revolute">
+		<origin xyz="0.06 0 0" rpy="1.571 0 0"/>
+		<parent link="lr_hipassembly"/>
+		<child  link="lr_upperleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.22" upper="2.22"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+						   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+	</joint>
+	<!-- Lower leg joint -->
+	<joint name="lr_q3_joint" type="revolute">
+		<origin xyz="0.15 0 0" rpy="0 0 0"/>
+		<parent link="lr_upperleg"/>
+		<child  link="lr_lowerleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.79" upper="2.79"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+						   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+	</joint>
+	<!-- Foot joint -->
+	<joint name="lr_foot_joint" type="fixed">
+		<origin xyz="0.134 0 0" rpy="0 0 0"/>
+		<parent link="lr_lowerleg"/>
+		<child  link="LH_FOOT"/>
+	</joint>
+
+
+	<!-- Links -->
+	<!-- Hip assembly link -->
+	<link name="lr_hipassembly">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		      <geometry>
+		        <mesh filename="./meshes/Coxa.STL" scale="1 1 1"/>
+		      </geometry>
+	      	<material name="2-turquoise">
+    			<color rgba="0 0.807 0.850 1.0" />
+  			</material>
+	    </visual>
+
+	    <collision>
+	    	<origin rpy="0 0 0" xyz="0 0 0"/>
+		    <geometry>
+		      <mesh filename="./meshes/Coxa_collision2.obj" scale="1 1 1"/>
+		    </geometry>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+  			</material>
+	    </collision>
+
+	    <inertial>
+	    	<origin xyz="0.02471 0 0"/>
+	      	<mass value="0.0406"/>
+	      	<inertia ixx="0.000038" ixy="0.0" ixz="0.0" iyy="0.000038" iyz="0.0" izz="0.000040"/>
+	    </inertial>
+	  </link>
+
+	<!-- Upper leg link -->
+	<link name="lr_upperleg">
+		<visual>
+	      	<geometry>
+	        	<mesh filename="./meshes/Femur.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<box size= "0.15 0.04 0.04"/>
+	      	</geometry>
+	      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.35"/>
+	      	<inertia ixx="0.000014" ixy="0" ixz="0" iyy="0.000047" iyz="0" izz="0.000051"/>
+	      	<origin xyz="0.075 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Lower leg link -->
+	<link name="lr_lowerleg">
+		<visual>
+	      	<geometry>
+	      		<mesh filename="./meshes/Tibia.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="1.571 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+						<mesh filename="./meshes/Tibia_collision2.obj" scale="1 1 1"/>
+	        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+	      	</geometry>
+	      	<origin xyz="0.0 0 0" rpy="1.571 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.076"/>
+	      	<inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000117"/>
+	      	<origin xyz="0.0887 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Foot link -->
+	<link name="LH_FOOT">
+		<visual>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.040"/>
+	      	<inertia ixx="0.000004" ixy="0" ixz="0" iyy="0.000004" iyz="0" izz="0.000004" />
+	      	<origin xyz="0 0 0"/>
+	    </inertial>
+	</link>
+	<!--END OF LEFT REAR LEG SECTION!!!!-->
+
+
+
+
+	<!--START OF RIGHT FRONT LEG SECTION!!!!-->
+	<!-- Joints -->
+	<!-- Coxa joint -->
+	<joint name="rf_q1_joint" type="revolute">
+		<origin xyz="0.115 -0.09 0" rpy="0 0 -0.873"/>
+		<parent link="body"/>
+		<child  link="rf_hipassembly"/>
+		<axis xyz="0 0 1"/>
+		
+		<limit effort="2.85" velocity="5.23" lower="-1.00" upper="1.00"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+	</joint>
+	<!-- Upper leg joint -->
+	<joint name="rf_q2_joint" type="revolute">
+		<origin xyz="0.06 0 0" rpy="1.571 0 0"/>
+		<parent link="rf_hipassembly"/>
+		<child  link="rf_upperleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.22" upper="2.22"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+						   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+	</joint>
+	<!-- Lower leg joint -->
+	<joint name="rf_q3_joint" type="revolute">
+		<origin xyz="0.15 0 0" rpy="0 0 0"/>
+		<parent link="rf_upperleg"/>
+		<child  link="rf_lowerleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.79" upper="2.79"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+						   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+	</joint>
+	<!-- Foot joint -->
+	<joint name="rf_foot_joint" type="fixed">
+		<origin xyz="0.134 0 0" rpy="0 0 0"/>
+		<parent link="rf_lowerleg"/>
+		<child  link="RF_FOOT"/>
+	</joint>
+
+
+	<!-- Links -->
+	<!-- Hip assembly link -->
+	<link name="rf_hipassembly">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		      <geometry>
+		        <mesh filename="./meshes/Coxa.STL" scale="1 1 1"/>
+		      </geometry>
+	      	<material name="2-turquoise">
+    			<color rgba="0 0.807 0.850 1.0" />
+  			</material>
+	    </visual>
+
+	    <collision>
+	    	<origin rpy="0 0 0" xyz="0 0 0"/>
+		    <geometry>
+		      <mesh filename="./meshes/Coxa_collision2.obj" scale="1 1 1"/>
+		    </geometry>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+  			</material>
+	    </collision>
+
+	    <inertial>
+	    	<origin xyz="0.02471 0 0"/>
+	      	<mass value="0.0406"/>
+	      	<inertia ixx="0.000038" ixy="0.0" ixz="0.0" iyy="0.000038" iyz="0.0" izz="0.000040"/>
+	    </inertial>
+	  </link>
+
+	<!-- Upper leg link -->
+	<link name="rf_upperleg">
+		<visual>
+	      	<geometry>
+	        	<mesh filename="./meshes/Femur.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<box size= "0.15 0.04 0.04"/>
+	      	</geometry>
+	      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.35"/>
+	      	<inertia ixx="0.000014" ixy="0" ixz="0" iyy="0.000047" iyz="0" izz="0.000051"/>
+	      	<origin xyz="0.075 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Lower leg link -->
+	<link name="rf_lowerleg">
+		<visual>
+	      	<geometry>
+	      		<mesh filename="./meshes/Tibia.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="1.571 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+						<mesh filename="./meshes/Tibia_collision2.obj" scale="1 1 1"/>
+	        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+	      	</geometry>
+	      	<origin xyz="0.0 0 0" rpy="1.571 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.076"/>
+	      	<inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000117"/>
+	      	<origin xyz="0.0887 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Foot link -->
+	<link name="RF_FOOT">
+		<visual>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.040"/>
+	      	<inertia ixx="0.000004" ixy="0" ixz="0" iyy="0.000004" iyz="0" izz="0.000004" />
+	      	<origin xyz="0 0 0"/>
+	    </inertial>
+	</link>
+	<!--END OF RIGHT FRONT LEG SECTION!!!!-->
+
+
+	<!--START OF RIGHT MIDDLE LEG SECTION!!!!-->
+	<!-- Joints -->
+	<!-- Coxa joint -->
+	<joint name="rm_q1_joint" type="revolute">
+		<origin xyz="0 -0.09 0" rpy="0 0 -1.571"/> <!--PUT ORIGIN OF LEG HERE-->
+		<parent link="body"/>
+		<child  link="rm_hipassembly"/>
+		<axis xyz="0 0 1"/>
+		
+		<limit effort="2.85" velocity="5.23" lower="-0.84" upper="0.84"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+	</joint>
+	<!-- Upper leg joint -->
+	<joint name="rm_q2_joint" type="revolute">
+		<origin xyz="0.06 0 0" rpy="1.571 0 0"/>
+		<parent link="rm_hipassembly"/>
+		<child  link="rm_upperleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.22" upper="2.22"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+						   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+	</joint>
+	<!-- Lower leg joint -->
+	<joint name="rm_q3_joint" type="revolute">
+		<origin xyz="0.15 0 0" rpy="0 0 0"/>
+		<parent link="rm_upperleg"/>
+		<child  link="rm_lowerleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.79" upper="2.79"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+						   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+	</joint>
+	<!-- Foot joint -->
+	<joint name="rm_foot_joint" type="fixed">
+		<origin xyz="0.134 0 0" rpy="0 0 0"/>
+		<parent link="rm_lowerleg"/>
+		<child  link="RM_FOOT"/>
+	</joint>
+
+
+	<!-- Links -->
+	<!-- Hip assembly link -->
+	<link name="rm_hipassembly">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		      <geometry>
+		        <mesh filename="./meshes/Coxa.STL" scale="1 1 1"/>
+		      </geometry>
+	      	<material name="2-turquoise">
+    			<color rgba="0 0.807 0.850 1.0" />
+  			</material>
+	    </visual>
+
+	    <collision>
+	    	<origin rpy="0 0 0" xyz="0 0 0"/>
+		    <geometry>
+		      <mesh filename="./meshes/Coxa_collision2.obj" scale="1 1 1"/>
+		    </geometry>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+  			</material>
+	    </collision>
+
+	    <inertial>
+	    	<origin xyz="0.02471 0 0"/>
+	      	<mass value="0.0406"/>
+	      	<inertia ixx="0.000038" ixy="0.0" ixz="0.0" iyy="0.000038" iyz="0.0" izz="0.000040"/>
+	    </inertial>
+	  </link>
+
+	<!-- Upper leg link -->
+	<link name="rm_upperleg">
+		<visual>
+	      	<geometry>
+	        	<mesh filename="./meshes/Femur.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<box size= "0.15 0.04 0.04"/>
+	      	</geometry>
+	      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.35"/>
+	      	<inertia ixx="0.000014" ixy="0" ixz="0" iyy="0.000047" iyz="0" izz="0.000051"/>
+	      	<origin xyz="0.075 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Lower leg link -->
+	<link name="rm_lowerleg">
+		<visual>
+	      	<geometry>
+	      		<mesh filename="./meshes/Tibia.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="1.571 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+						<mesh filename="./meshes/Tibia_collision2.obj" scale="1 1 1"/>
+	        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+	      	</geometry>
+	      	<origin xyz="0.0 0 0" rpy="1.571 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.076"/>
+	      	<inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000117"/>
+	      	<origin xyz="0.0887 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Foot link -->
+	<link name="RM_FOOT">
+		<visual>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.040"/>
+	      	<inertia ixx="0.000004" ixy="0" ixz="0" iyy="0.000004" iyz="0" izz="0.000004" />
+	      	<origin xyz="0 0 0"/>
+	    </inertial>
+	</link>
+	<!--END OF LEFT FRONT LEG SECTION!!!!-->
+
+
+	<!--START OF RIGHT REAR LEG SECTION!!!!-->
+	<!-- Joints -->
+	<!-- Coxa joint -->
+	<joint name="rr_q1_joint" type="revolute">
+		<origin xyz="-0.115 -0.09 0" rpy="0 0 -2.269"/>
+		<parent link="body"/>
+		<child  link="rr_hipassembly"/>
+		<axis xyz="0 0 1"/>
+		
+		<limit effort="2.85" velocity="5.23" lower="-1.00" upper="1.00"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+	</joint>
+	<!-- Upper leg joint -->
+	<joint name="rr_q2_joint" type="revolute">
+		<origin xyz="0.06 0 0" rpy="1.571 0 0"/>
+		<parent link="rr_hipassembly"/>
+		<child  link="rr_upperleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.22" upper="2.22"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+						   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+	</joint>
+	<!-- Lower leg joint -->
+	<joint name="rr_q3_joint" type="revolute">
+		<origin xyz="0.15 0 0" rpy="0 0 0"/>
+		<parent link="rr_upperleg"/>
+		<child  link="rr_lowerleg"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="2.85" velocity="5.23" lower="-2.79" upper="2.79"/>
+		<dynamics damping="0.15" friction="0" />
+		<!-- <safety_controller k_position="100" k_velocity="100"
+						   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+						   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+	</joint>
+	<!-- Foot joint -->
+	<joint name="rr_foot_joint" type="fixed">
+		<origin xyz="0.134 0 0" rpy="0 0 0"/>
+		<parent link="rr_lowerleg"/>
+		<child  link="RH_FOOT"/>
+	</joint>
+
+
+	<!-- Links -->
+	<!-- Hip assembly link -->
+	<link name="rr_hipassembly">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		      <geometry>
+		        <mesh filename="./meshes/Coxa.STL" scale="1 1 1"/>
+		      </geometry>
+	      	<material name="turquoise">
+    			<color rgba="0 0.807 0.850 1.0" />
+  			</material>
+	    </visual>
+
+	    <collision>
+	    	<origin rpy="0 0 0" xyz="0 0 0"/>
+		    <geometry>
+		      <mesh filename="./meshes/Coxa_collision2.obj" scale="1 1 1"/>
+		    </geometry>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+  			</material>
+	    </collision>
+
+	    <inertial>
+	    	<origin xyz="0.02471 0 0"/>
+	      	<mass value="0.0406"/>
+	      	<inertia ixx="0.000038" ixy="0.0" ixz="0.0" iyy="0.000038" iyz="0.0" izz="0.000040"/>
+	    </inertial>
+	  </link>
+
+	<!-- Upper leg link -->
+	<link name="rr_upperleg">
+		<visual>
+	      	<geometry>
+	        	<mesh filename="./meshes/Femur.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<box size= "0.15 0.04 0.04"/>
+	      	</geometry>
+	      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.35"/>
+	      	<inertia ixx="0.000014" ixy="0" ixz="0" iyy="0.000047" iyz="0" izz="0.000051"/>
+	      	<origin xyz="0.075 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Lower leg link -->
+	<link name="rr_lowerleg">
+		<visual>
+	      	<geometry>
+	      		<mesh filename="./meshes/Tibia.STL" scale="1 1 1"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="1.571 0 0"/>
+	      	<material name="white">
+    			<color rgba="1.0 1.0 1.0 1.0"/>
+ 			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+						<mesh filename="./meshes/Tibia_collision2.obj" scale="1 1 1"/>
+	        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+	      	</geometry>
+	      	<origin xyz="0.0 0 0" rpy="1.571 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.076"/>
+	      	<inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000117"/>
+	      	<origin xyz="0.0887 0 0"/>
+	    </inertial>
+	</link>
+
+	<!-- Foot link -->
+	<link name="RH_FOOT">
+		<visual>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="black">
+    			<color rgba="0.0 0.0 0.0 1.0"/>
+			</material>
+	    </visual>
+
+	    <collision>
+	      	<geometry>
+	        	<sphere radius="0.016"/>
+	      	</geometry>
+	      	<origin xyz="0 0 0" rpy="0 0 0"/>
+	      	<material name="colli">
+    			<color rgba="1 0.424 0.039 0.7"/>
+			</material>
+	    </collision>
+
+	    <inertial>
+	      	<mass value="0.040"/>
+	      	<inertia ixx="0.000004" ixy="0" ixz="0" iyy="0.000004" iyz="0" izz="0.000004" />
+	      	<origin xyz="0 0 0"/>
+	    </inertial>
+	</link>
+	<!--END OF RIGHT REAR LEG SECTION!!!!-->
+
+	<!-- Sensors 
+	<xacro:IMU
+		parent="body"
+		imu_name="base_imu"
+		imu_topic="base/data"
+		imu_service="trunk/service"
+		update_rate="100">
+		<origin xyz="0.0 0.0 0.022" rpy="0 0 0"/>
+	</xacro:IMU>
+	
+	<xacro:LIDAR
+		parent="body"
+		lidar_name="trunk_lidar"
+		lidar_topic="lidar/data"
+		update_rate="100">
+		<origin xyz="0.06 0.0 0.04" rpy="0 0 1.571"/>
+	</xacro:LIDAR> -->
+
+<!-- Joint Transmissions: Tells Drake that these are actuated-->
+
+	<!-- START OF LEFT FRONT LEG TRANSMISSION -->
+    <!-- Hip assembly -->
+	<transmission name="lf_q1_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="lf_q1_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="lf_q1_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Upper leg -->
+	<transmission name="lf_q2_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="lf_q2_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="lf_q2_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Lower leg -->
+	<transmission name="lf_q3_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="lf_q3_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="lf_q3_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- END OF LEFT FRONT LEG TRANSMISSION -->
+
+
+
+	<!-- START OF LEFT BACK LEG TRANSMISSION -->
+    <!-- Hip assembly -->
+	<transmission name="lr_q1_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="lr_q1_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="lr_q1_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Upper leg -->
+	<transmission name="lr_q2_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="lr_q2_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="lr_q2_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Lower leg -->
+	<transmission name="lr_q3_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="lr_q3_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="lr_q3_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- END OF LEFT BACK LEG TRANSMISSION -->
+
+
+
+	<!-- START OF LEFT MIDDLE LEG TRANSMISSION -->
+	<!-- Hip assembly -->
+		<transmission name="lm_q1_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="lm_q1_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="lm_q1_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+    	<!-- Upper leg -->
+		<transmission name="lm_q2_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="lm_q2_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="lm_q2_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+    	<!-- Lower leg -->
+		<transmission name="lm_q3_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="lm_q3_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="lm_q3_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+	<!-- END OF LEFT MIDDLE LEG TRANSMISSION -->
+
+
+
+	<!-- START OF RIGHT FRONT LEG TRANSMISSION -->
+    <!-- Hip assembly -->
+	<transmission name="rf_q1_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="rf_q1_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="rf_q1_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Upper leg -->
+	<transmission name="rf_q2_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="rf_q2_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="rf_q2_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Lower leg -->
+	<transmission name="rf_q3_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="rf_q3_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="rf_q3_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- END OF RIGHT FRONT LEG TRANSMISSION -->
+
+
+
+	<!-- START OF RIGHT MIDDLE LEG TRANSMISSION -->
+	<!-- Hip assembly -->
+		<transmission name="rm_q1_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="rm_q1_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="rm_q1_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+    	<!-- Upper leg -->
+		<transmission name="rm_q2_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="rm_q2_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="rm_q2_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+    	<!-- Lower leg -->
+		<transmission name="rm_q3_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="rm_q3_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="rm_q3_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+	<!-- END OF RIGHT MIDDLE LEG TRANSMISSION -->
+
+
+
+	<!-- START OF RIGHT BACK LEG TRANSMISSION -->
+    <!-- Hip assembly -->
+	<transmission name="rr_q1_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="rr_q1_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="rr_q1_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Upper leg -->
+	<transmission name="rr_q2_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="rr_q2_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="rr_q2_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- Lower leg -->
+	<transmission name="rr_q3_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="rr_q3_joint">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="rr_q3_motor">
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<mechanicalReduction>200</mechanicalReduction>
+		</actuator>
+	</transmission>
+	<!-- END OF RIGHT BACK LEG TRANSMISSION -->
+
+</robot>

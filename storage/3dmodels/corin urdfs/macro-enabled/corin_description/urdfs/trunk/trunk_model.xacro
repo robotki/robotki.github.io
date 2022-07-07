@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+
+	<!-- Things that are needed only for Gazebo (not the physical robot). These include sensor and controller plugin specifications -->
+	<xacro:include filename="$(find corin_description)/urdfs/trunk/trunk.gazebo.xacro"/>
+
+	<!-- ================================ Trunk ================================ -->
+
+	<xacro:macro name="RobotTrunk" params="name *origin">
+		<!-- Floating-base Joint -->
+		<joint name="floating_base" type="fixed">
+			<axis xyz="0 0 1"/>
+			<!-- origin remains zero as body_dummy same dimensions as body -->
+			<xacro:insert_block name="origin"/>
+			<parent link="${name}_link"/>
+			<child link="trunk"/>
+		</joint>
+
+		<!-- Floating Link  -->
+		<link name="${name}_link">
+			<visual>
+				<geometry>
+					<cylinder length="0.01" radius="0.01"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<!-- Trunk link -->
+		<link name="trunk">
+			<inertial>
+				<origin xyz="${xcom_trunk} ${ycom_trunk} ${zcom_trunk}"/>
+				<mass value="${m_trunk}"/>
+				<inertia ixx="${ixx_trunk}" iyy="${iyy_trunk}" izz="${izz_trunk}"
+						 ixy="${ixy_trunk}" ixz="${ixz_trunk}" iyz="${iyz_trunk}"/>
+			</inertial>
+
+			<visual>
+				<geometry>
+					<mesh filename="package://corin_description/meshes/Body.STL" scale="1 1 1"/>
+					<!-- <box size= "${trunk_x} ${trunk_y} ${trunk_z}"/> -->
+				</geometry>
+				<material name="orange"/>
+			</visual>
+
+			<collision>
+				<geometry>
+					<mesh filename="package://corin_description/meshes/Body_collision.STL" scale="1 1 1"/>
+					<!-- <box size= "${trunk_x-0.02} ${3.8/5*trunk_y} ${trunk_z}"/> -->
+				</geometry>
+				<material name="colli"/>
+			</collision>
+		</link>
+
+		<!-- Extensions -->
+		<xacro:trunk_gazebo name="trunk"/>
+	</xacro:macro>
+
+</robot>

@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+	<!-- Things that are needed only for Gazebo (not the physical robot). These include sensor and controller plugin specifications -->
+	<xacro:include filename="$(find corin_description)/urdfs/leg/leg.transmission.xacro"/>
+	<xacro:include filename="$(find corin_description)/urdfs/leg/leg.gazebo.xacro"/>
+
+	<!-- ================================== Leg ================================== -->
+	<!-- The xacro macro xacro:corin_leg contains: hip assembly, upper and lower leg -->
+	<xacro:macro name="RobotLeg" params="name parent middle_leg *origin load_force_sensors">
+		<!-- Joints -->
+		<!-- Coxa joint -->
+		<joint name="${name}_q1_joint" type="revolute">
+			<xacro:insert_block name="origin"/>
+			<parent link="${parent}"/>
+			<child  link="${name}_hipassembly"/>
+			<axis xyz="0 0 1"/>
+			
+			<xacro:if value="${middle_leg}"> 	<!-- overwrite joint limits for middle legs-->
+				<limit effort="${MX64_effort}" velocity="${MX64_velocity}" lower="${-cxm_joint_lim}" upper="${cxm_joint_lim}"/>
+			</xacro:if>
+			<xacro:unless value="${middle_leg}"> 	<!-- overwrite joint limits for middle legs-->
+				<limit effort="${MX64_effort}" velocity="${MX64_velocity}" lower="${-cox_joint_lim}" upper="${cox_joint_lim}"/>
+			</xacro:unless>
+			<dynamics damping="${MX64_damping}" friction="0" />
+			<!-- <safety_controller k_position="100" k_velocity="100"
+							   soft_lower_limit="${-7*PI/18}" soft_upper_limit="${5*PI/36}" /> -->
+		</joint>
+		<!-- Upper leg joint -->
+		<joint name="${name}_q2_joint" type="revolute">
+			<origin xyz="${coxa_l} 0 0" rpy="${pi/2} 0 0"/>
+			<parent link="${name}_hipassembly"/>
+			<child  link="${name}_upperleg"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="${MX64_effort}" velocity="${MX64_velocity}" lower="${-fem_joint_lim}" upper="${fem_joint_lim}"/>
+			<dynamics damping="${MX64_damping}" friction="0" />
+			<!-- <safety_controller k_position="100" k_velocity="100"
+							   soft_lower_limit="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36}"
+							   soft_upper_limit="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36}" /> -->
+		</joint>
+		<!-- Lower leg joint -->
+		<joint name="${name}_q3_joint" type="revolute">
+			<origin xyz="${femur_l} 0 0" rpy="0 0 0"/>
+			<parent link="${name}_upperleg"/>
+			<child  link="${name}_lowerleg"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="${MX64_effort}" velocity="${MX64_velocity}" lower="${-tib_joint_lim}" upper="${tib_joint_lim}"/>
+			<dynamics damping="${MX64_damping}" friction="0" />
+			<!-- <safety_controller k_position="100" k_velocity="100"
+							   soft_lower_limit="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18}"
+							   soft_upper_limit="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18}" /> -->
+
+		</joint>
+		<!-- Foot joint -->
+		<joint name="${name}_foot_joint" type="fixed">
+			<origin xyz="${tibia_l} 0 0" rpy="0 0 0"/>
+			<parent link="${name}_lowerleg"/>
+			<child  link="${name}_foot"/>
+		</joint>
+
+
+		<!-- Links -->
+		<!-- Hip assembly link -->
+		<link name="${name}_hipassembly">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+			      <geometry>
+			        <mesh filename="package://corin_description/meshes/Coxa.STL" scale="1 1 1"/>
+			      </geometry>
+		      	<material name="green"/>
+		    </visual>
+
+		    <collision>
+		    	<origin rpy="0 0 0" xyz="0 0 0"/>
+			    <geometry>
+			      <mesh filename="package://corin_description/meshes/Coxa_collision.STL" scale="1 1 1"/>
+			    </geometry>
+		      <material name="orange"/>
+		    </collision>
+
+		    <inertial>
+		    	<origin xyz="${coxa_com_x} ${coxa_com_y} ${coxa_com_z}"/>
+		      	<mass value="${coxa_m}"/>
+		      	<inertia ixx="${coxa_i_xx}" ixy="${coxa_i_xy}" ixz="${coxa_i_xz}" iyy="${coxa_i_yy}" iyz="${coxa_i_yz}" izz="${coxa_i_zz}"/>
+		    </inertial>
+		  </link>
+
+		<!-- Upper leg link -->
+		<link name="${name}_upperleg">
+			<visual>
+		      	<geometry>
+		        	<mesh filename="package://corin_description/meshes/Femur.STL" scale="1 1 1"/>
+		      	</geometry>
+		      	<origin xyz="0 0 0" rpy="0 0 0"/>
+		      	<material name="blue"/>
+		    </visual>
+
+		    <collision>
+		      	<geometry>
+		        	<box size= "${femur_cl} ${femur_w} ${femur_d}"/>
+		      	</geometry>
+		      	<origin xyz="0.075 0 0" rpy="0 0 0"/>
+		      	<material name="colli"/>
+		    </collision>
+
+		    <inertial>
+		      	<mass value="${femur_m}"/>
+		      	<inertia ixx="${femur_i_xx}" ixy="${femur_i_xy}" ixz="${femur_i_xz}" iyy="${femur_i_yy}" iyz="${femur_i_yz}" izz="${femur_i_zz}"/>
+		      	<origin xyz="${femur_com_x} ${femur_com_y} ${femur_com_z}"/>
+		    </inertial>
+		</link>
+
+		<!-- Lower leg link -->
+		<link name="${name}_lowerleg">
+			<visual>
+		      	<geometry>
+		      		<mesh filename="package://corin_description/meshes/Tibia.STL" scale="1 1 1"/>
+		      	</geometry>
+		      	<origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+		      	<material name="yellow"/>
+		    </visual>
+
+		    <collision>
+		      	<geometry>
+							<mesh filename="package://corin_description/meshes/Tibia_collision.STL" scale="1 1 1"/>
+		        	<!-- <box size= "${tibia_cl} ${tibia_d} ${tibia_w}"/> -->
+		      	</geometry>
+		      	<origin xyz="0.0 0 0" rpy="${pi/2} 0 0"/>
+		      	<material name="colli"/>
+		    </collision>
+
+		    <inertial>
+		      	<mass value="${tibia_m}"/>
+		      	<inertia ixx="${tibia_i_xx}" ixy="${tibia_i_xy}" ixz="${tibia_i_xz}" iyy="${tibia_i_yy}" iyz="${tibia_i_yz}" izz="${tibia_i_zz}"/>
+		      	<origin xyz="${tibia_com_x} ${tibia_com_y} ${tibia_com_z}"/>
+		    </inertial>
+		</link>
+
+		<!-- Foot link -->
+		<link name="${name}_foot">
+			<visual>
+		      	<geometry>
+		        	<sphere radius="${foot_r}"/>
+		      	</geometry>
+		      	<origin xyz="0 0 0" rpy="0 0 0"/>
+		      	<material name="black"/>
+		    </visual>
+
+		    <collision>
+		      	<geometry>
+		        	<sphere radius="${foot_r}"/>
+		      	</geometry>
+		      	<origin xyz="0 0 0" rpy="0 0 0"/>
+		      	<material name="colli"/>
+		    </collision>
+
+		    <inertial>
+		      	<mass value="${foot_m}"/>
+		      	<inertia ixx="${foot_I}" ixy="0" ixz="0" iyy="${foot_I}" iyz="0" izz="${foot_I}" />
+		      	<origin xyz="0 0 0"/>
+		    </inertial>
+		</link>
+
+		<!-- Extensions -->
+		<xacro:leg_transmission name="${name}"/>
+		<xacro:leg_gazebo name="${name}" load_force_sensors="${load_force_sensors}"/>
+	</xacro:macro>
+
+</robot>

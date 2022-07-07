@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<launch>
+
+	<arg name="sensors" default="true"/>
+	<arg name="gui" default="false"/> 		<!-- True: manual control   False: real sensor -->
+	<!-- <arg name="rviz_conf" default="$(find hyq_description)/rviz/hyq_model_tf.rviz"/> -->
+
+	<!-- load robot -->
+	<param name="robot_description" textfile="$(find corin_description)/robots/corin.urdf" />
+	<param name="publish_frequency" value="50" /> <!-- Hz -->
+
+	<!-- publish the joint and robot states -->
+	<group if="$(arg gui)">
+		<node name="joint_state_publisher" pkg="joint_state_publisher"
+			type="joint_state_publisher" respawn="true" />
+			<param name="use_gui" value="$(arg gui)"/>
+			<param name="rate" value="100"/>
+	</group>
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher"
+		type="state_publisher" respawn="true">
+		<param name="publish_frequency" value="200" />
+		<!-- <param name="rate" value="200" /> -->
+		<!--<remap from="/joint_states" to="/corin/joint_states" /> 	 when running gazebo -->
+		<remap from="/joint_states" to="/robotis/present_joint_states" />
+	</node>
+
+	<!-- load displays -->
+	<param name="use_gui" value="true"/>
+	<node name="rviz" pkg="rviz" type="rviz" required="true" />
+
+</launch>

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+	<!-- The following included files set up definitions of parts of the robot body -->
+	<xacro:include filename="$(find corin_description)/urdfs/common.xacro"/>
+	<xacro:include filename="$(find corin_description)/urdfs/materials.xacro"/>
+	<!-- Trunk -->
+	<xacro:include filename="$(find corin_description)/urdfs/trunk/trunk_fixed.xacro"/>
+	
+	<!-- Legs -->
+	<xacro:include filename="$(find corin_description)/urdfs/leg/leg.xacro"/>
+
+	<!-- Sensors -->
+	<xacro:include filename="$(find corin_description)/urdfs/sensors/sensors.xacro"/>
+
+	<!-- generic simulator_gazebo plugins for starting mechanism control, ros time -->
+	<xacro:include filename="$(find corin_description)/robots/gazebo.xacro"/>
+
+	<!-- Utilise macros to build robot -->
+	
+	<!-- body -->
+	<xacro:RobotTrunk name="base">
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+	</xacro:RobotTrunk>
+
+	<xacro:RobotLeg
+		name="lf"
+		parent="trunk"
+		middle_leg="false"
+		load_force_sensors="true">
+		<origin xyz="${trunk_x/2} ${trunk_y/2} 0" rpy="0 0 ${50*PI/180}"/>
+	</xacro:RobotLeg>
+
+	<xacro:RobotLeg
+		name="lm"
+		parent="trunk"
+		middle_leg="true"
+		load_force_sensors="false">
+		<origin xyz="0 ${trunk_y/2} 0" rpy="0 0 ${PI/2}"/>
+	</xacro:RobotLeg>
+
+	<xacro:RobotLeg
+		name="lr"
+		parent="trunk"
+		middle_leg="false"
+		load_force_sensors="false">
+		<origin xyz="${-trunk_x/2} ${trunk_y/2} 0" rpy="0 0 ${PI/2+40*PI/180}"/>
+	</xacro:RobotLeg>
+
+	<xacro:RobotLeg
+		name="rf"
+		parent="trunk"
+		middle_leg="false"
+		load_force_sensors="true">
+		<origin xyz="${trunk_x/2} ${-trunk_y/2} 0" rpy="0 0 ${-50*PI/180}"/>
+	</xacro:RobotLeg>
+
+	<xacro:RobotLeg
+		name="rm"
+		parent="trunk"
+		middle_leg="true"
+		load_force_sensors="false">
+		<origin xyz="0 ${-trunk_y/2} 0" rpy="0 0 ${-PI/2}"/>
+	</xacro:RobotLeg>
+
+	<xacro:RobotLeg
+		name="rr"
+		parent="trunk"
+		middle_leg="false"
+		load_force_sensors="false">
+		<origin xyz="${-trunk_x/2} ${-trunk_y/2} 0" rpy="0 0 ${-PI/2-40*PI/180}"/>
+	</xacro:RobotLeg>
+
+	<!-- Sensors -->
+	<xacro:IMU
+		parent="trunk"
+		imu_name="base_imu"
+		imu_topic="base/data"
+		imu_service="trunk/service"
+		update_rate="100">
+		<origin xyz="0.0 0.0 0.022" rpy="0 0 0"/>
+	</xacro:IMU>
+	<!--
+	<xacro:LIDAR
+		parent="trunk"
+		lidar_name="trunk_lidar"
+		lidar_topic="lidar/data"
+		update_rate="100">
+		<origin xyz="0.06 0.0 0.04" rpy="0 0 ${PI/2}"/>
+	</xacro:LIDAR> -->
+
+</robot>

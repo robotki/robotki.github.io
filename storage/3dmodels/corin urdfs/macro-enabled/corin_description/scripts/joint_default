@@ -1,0 +1,137 @@
+#!/usr/bin/env python
+
+""" Script to move robot joints into a pre-defined position
+	the position is not held unless physics engine is paused
+"""
+
+import rospy, sys, os, time
+import string
+import warnings
+import tf
+from math import pi
+
+from gazebo_msgs.srv import *
+from gazebo_ros import gazebo_interface
+from std_srvs.srv import Empty
+from gazebo_msgs.msg import ModelState
+from geometry_msgs.msg import Pose
+from geometry_msgs.msg import Twist
+from std_msgs.msg import Float64
+
+def deg2rad(q):
+	return (q*pi/180)
+
+if __name__ == "__main__":
+	if len(sys.argv) < 2:
+		sleep_time = 0.0
+	else:
+		print sys.argv[1]
+		sleep_time = float(sys.argv[1])
+
+	## Define the variables
+	# For joint position
+	param_name              = ""
+	model_name              = ""
+	robot_namespace         = ""
+	gazebo_namespace        = "/gazebo"
+	joint_names             = []
+	joint_positions         = []
+
+	# For robot pose
+	model_state = ModelState()
+	pose  		= Pose()
+	twist 		= Twist()
+
+	# Setting the parameters
+	model_name = 'corin'
+	param_name = 'robot_description'
+	reference_frame	= 'world'
+	rospy.set_param('standup', False)
+
+	# LF leg
+	joint_names.append('lf_q1_joint')
+	joint_positions.append(0.0)
+	joint_names.append('lf_q2_joint')
+	joint_positions.append(0.34)
+	joint_names.append('lf_q3_joint')
+	joint_positions.append(-1.85)
+	# LM leg
+	joint_names.append('lm_q1_joint')
+	joint_positions.append(0.0)
+	joint_names.append('lm_q2_joint')
+	joint_positions.append(0.34)
+	joint_names.append('lm_q3_joint')
+	joint_positions.append(-1.85)
+	# LR leg
+	joint_names.append('lr_q1_joint')
+	joint_positions.append(0.0)
+	joint_names.append('lr_q2_joint')
+	joint_positions.append(0.34)
+	joint_names.append('lr_q3_joint')
+	joint_positions.append(-1.85)
+
+	# RF leg
+	joint_names.append('rf_q1_joint')
+	joint_positions.append(0.0)
+	joint_names.append('rf_q2_joint')
+	joint_positions.append(0.34)
+	joint_names.append('rf_q3_joint')
+	joint_positions.append(-1.85)
+	# RM leg
+	joint_names.append('rm_q1_joint')
+	joint_positions.append(0.0)
+	joint_names.append('rm_q2_joint')
+	joint_positions.append(0.34)
+	joint_names.append('rm_q3_joint')
+	joint_positions.append(-1.85)
+	# RH leg
+	joint_names.append('rr_q1_joint')
+	joint_positions.append(0.0)
+	joint_names.append('rr_q2_joint')
+	joint_positions.append(0.34)
+	joint_names.append('rr_q3_joint')
+	joint_positions.append(-1.85)
+
+	## Set robot position
+	pose.position.x		= 0.0
+	pose.position.y		= 0.0
+	pose.position.z		= 0.12
+	roll 				= 0.0
+	pitch 				= 0.0
+	yaw 				= 0.0
+	quaternion 			= tf.transformations.quaternion_from_euler(deg2rad(roll), deg2rad(pitch), deg2rad(yaw))
+	pose.orientation.x	= quaternion[0]
+	pose.orientation.y	= quaternion[1]
+	pose.orientation.z	= quaternion[2]
+	pose.orientation.w	= quaternion[3]
+
+	model_state.model_name 		= model_name
+	model_state.pose 			= pose
+	model_state.reference_frame = reference_frame
+
+	gazebo_namespace = '/gazebo'
+
+
+	## Move robot pose
+	rospy.wait_for_service('%s/set_model_state'%(gazebo_namespace))
+	rospy.sleep(sleep_time)
+	try:
+		set_model_state = rospy.ServiceProxy('%s/set_model_state'%(gazebo_namespace), SetModelState)
+		rospy.loginfo("Calling service %s/set_model_state"%gazebo_namespace)
+		resp = set_model_state(model_state)
+		rospy.loginfo("Set model state status: %s"%resp.status_message)
+		print resp.status_message
+
+	except rospy.ServiceException as e:
+		print("Service call failed: %s" % e)
+
+
+	## Move joints
+	rospy.wait_for_service('%s/set_model_configuration'%(gazebo_namespace))
+	try:
+		success = gazebo_interface.set_model_configuration_client(model_name, param_name, 
+                                                                  joint_names, joint_positions, gazebo_namespace)
+		print 'SetJointState:', success
+		rospy.set_param(model_name + '/standing', True)
+	except rospy.ServiceException, e:
+		print "set model configuration service call failed: %s"%e

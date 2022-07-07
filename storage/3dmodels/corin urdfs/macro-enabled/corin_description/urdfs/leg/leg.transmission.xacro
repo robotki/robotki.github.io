@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+	<xacro:macro name="leg_transmission" params="name">
+    	<!-- Hip assembly -->
+		<transmission name="${name}_q1_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_q1_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${name}_q1_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+    	<!-- Upper leg -->
+		<transmission name="${name}_q2_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_q2_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${name}_q2_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+    	<!-- Lower leg -->
+		<transmission name="${name}_q3_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_q3_joint">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${name}_q3_motor">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>200</mechanicalReduction>
+			</actuator>
+		</transmission>
+	</xacro:macro>
+
+</robot>

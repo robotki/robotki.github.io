@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="corin">
+
+	<!-- #############  IMU Sensor  ############# -->
+	<xacro:macro name="IMU" params="parent imu_name imu_topic imu_service freq_rate *origin">
+        <!-- Joint -->
+        <joint name="${imu_name}_joint" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="${parent}" />
+            <child link="${imu_name}"/>
+        </joint>
+
+        <!-- Link -->
+        <link name="${imu_name}">
+            <inertial>
+                <origin xyz="-0.0000  0.0000  0.000"/>
+                <mass value="0.0000"/>
+                <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" ixz="0.0" iyz="0.0"/>
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.01 0.01 0.01" />
+                </geometry>
+                <material name="black">
+                    <color rgba="0 0 0 0.9"/>
+                </material>
+            </visual>
+						<collision>
+								<origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+								<geometry>
+										<box size="0.01 0.01 0.01" />
+								</geometry>
+								<material name="black">
+										<color rgba="0 0 0 0.9"/>
+								</material>
+						</collision>
+        </link>
+
+        <gazebo reference="${imu_name}">
+					<material>Gazebo/Grey</material>
+					<gravity>false</gravity>
+					<sensor name='IMU' type='imu'>
+						<always_on>true</always_on>
+						<!-- <update_rate>${freq_rate}</update_rate> -->
+						<visualize>true</visualize>
+						<topic>__default_topic__</topic>
+            <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+								<robotNamespace>/corin/imu/</robotNamespace>
+								<alwaysOn>true</alwaysOn>
+								<gravity>false</gravity>
+								<frameName>${imu_name}</frameName>
+                <topicName>${imu_topic}</topicName>
+                <serviceName>${imu_service}</serviceName>
+								<bodyName>${imu_name}</bodyName>
+                <updateRateHZ>${freq_rate}</updateRateHZ>
+								<gaussianNoise>0</gaussianNoise>
+								<xyzOffset>0 0 0</xyzOffset>
+    						<rpyOffset>0 0 0</rpyOffset>
+            </plugin>
+						<pose>0 0 0 0 0 0</pose>
+					</sensor>
+        </gazebo>
+
+    </xacro:macro>
+
+    <!-- #############  Laser Sensor  ############# -->
+    <!-- Noise parameters based on published spec for Hokuyo laser achieving "+-30mm" accuracy at range < 10m. -->
+    <!-- A mean of 0.0m and stddev of 0.01m will put 99.7% of samples within 0.03m of the true reading. -->
+
+    <xacro:macro name="LIDAR" params="parent lidar_name lidar_topic update_rate *origin">
+        <!-- Joint -->
+        <joint name="${lidar_name}_joint" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="${parent}" />
+            <child link="${lidar_name}"/>
+        </joint>
+
+        <!-- Link -->
+        <link name="${lidar_name}">
+            <inertial>
+                <origin xyz="-0.00020  0.00010  0.00110"/>
+                <mass value="0.010"/>
+                <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" ixz="0.0" iyz="0.0"/>
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.01" radius="0.01"/>
+                </geometry>
+                <material name="black">
+                    <color rgba="0 0 0 0.9"/>
+                </material>
+            </visual>
+        </link>
+
+        <gazebo reference="${lidar_name}">
+            <material>Gazebo/Blue</material>
+            <sensor type="ray" name="head_hokuyo_sensor">
+                <pose>0 0 0 0 0 0</pose>
+                <visualize>true</visualize>
+                <update_rate>${update_rate}</update_rate>
+                <ray>
+                    <scan>
+                        <horizontal>
+                            <samples>5</samples>
+                            <resolution>1</resolution>
+                            <min_angle>-0.009</min_angle>
+                            <max_angle>0.009</max_angle>
+                        </horizontal>
+                    </scan>
+                  <range>
+                      <min>0.01</min>
+                      <max>1.0</max>
+                      <resolution>0.005</resolution>
+                  </range>
+                  <noise>
+                      <type>none</type>
+                      <mean>0.0</mean>
+                      <stddev>0.0</stddev>
+                  </noise>
+                </ray>
+
+                <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+                    <robotNamespace>/corin/lidar/</robotNamespace>
+                    <alwaysOn>true</alwaysOn>
+                    <update_rate>${update_rate}</update_rate>
+                    <topicName>${lidar_topic}</topicName>
+                    <frameName>${parent}</frameName>
+                    <bodyName>${parent}</bodyName>
+                </plugin>
+            </sensor>
+        </gazebo>
+    </xacro:macro>
+
+</robot>
